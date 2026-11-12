@@ -1,0 +1,77 @@
+name: Build APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - run: npm install
+      - run: cp node_modules/chart.js/dist/chart.umd.js www/chart.umd.js
+      - run: npx cap add android
+      - name: Generate app icons from www/logo.png
+        run: |
+          pip install --break-system-packages pillow
+          python3 - <<'PY'
+          from PIL import Image, ImageDraw
+          import os
+          res = "android/app/src/main/res"
+          src = Image.open("www/logo.png").convert("RGBA")
+          for d, px in {"mdpi": 48, "hdpi": 72, "xhdpi": 96, "xxhdpi": 144, "xxxhdpi": 192}.items():
+              o = f"{res}/mipmap-{d}"
+              os.makedirs(o, exist_ok=True)
+              src.resize((px, px), Image.LANCZOS).save(o + "/ic_launcher.png")
+              k = src.resize((int(px * 0.92),) * 2, Image.LANCZOS)
+              tile = Image.new("RGBA", (px, px), (225, 238, 252, 255))
+              tile.paste(k, ((px - k.width) // 2, (px - k.height) // 2), k)
+              m = Image.new("L", (px, px), 0)
+              ImageDraw.Draw(m).ellipse((0, 0, px - 1, px - 1), fill=255)
+              r = Image.new("RGBA", (px, px), (0, 0, 0, 0))
+              r.paste(tile, (0, 0), m)
+              r.save(o + "/ic_launcher_round.png")
+          PY
+          rm -rf android/app/src/main/res/mipmap-anydpi-v26
+      - name: Fixed signing key and version (enables updates)
+        run: |
+          mkdir -p ~/.android
+          cp debug.keystore ~/.android/debug.keystore
+          sed -i -E "s/versionCode [0-9]+/versionCode ${{ github.run_number }}/; s/versionName \"[^\"]*\"/versionName \"1.0.03\"/" android/app/build.gradle
+          grep -n "versionCode\|versionName" android/app/build.gradle
+      - run: npx cap sync android
+      - name: Security hardening (no internet permission, no backup, no debug, no screenshots)
+        run: |
+          python3 - <<'PY'
+          import re, glob
+          m = "android/app/src/main/AndroidManifest.xml"
+          s = open(m, encoding="utf8").read()
+          s = s.replace('android:allowBackup="true"', 'android:allowBackup="false"')
+          s = re.sub(r'\s*<uses-permission android:name="android.permission.INTERNET"\s*/>', '', s)
+          if "usesCleartextTraffic" not in s:
+              s = s.replace("<application", '<application android:usesCleartextTraffic="false"', 1)
+          assert 'allowBackup="false"' in s and "permission.INTERNET" not in s
+          open(m, "w", encoding="utf8").write(s)
+          f = glob.glob("android/app/src/main/java/**/MainActivity.java", recursive=True)[0]
+          j = open(f, encoding="utf8").read()
+          j = re.sub(r"class MainActivity extends BridgeActivity\s*\{\s*\}", "class MainActivity extends BridgeActivity {\n  @Override public void onCreate(android.os.Bundle b) { super.onCreate(b); getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_SECURE, android.view.WindowManager.LayoutParams.FLAG_SECURE); }\n}", j)
+          assert "FLAG_SECURE" in j
+          open(f, "w", encoding="utf8").write(j)
+          g = "android/app/build.gradle"
+          b = open(g, encoding="utf8").read()
+          assert "buildTypes {" in b
+          b = b.replace("buildTypes {", "buildTypes {\n        debug { debuggable false }", 1)
+          open(g, "w", encoding="utf8").write(b)
+          PY
+      - run: cd android && chmod +x gradlew && ./gradlew assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: family-budget-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
