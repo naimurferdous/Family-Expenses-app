@@ -31,7 +31,7 @@ jobs:
               os.makedirs(o, exist_ok=True)
               src.resize((px, px), Image.LANCZOS).save(o + "/ic_launcher.png")
               k = src.resize((int(px * 0.92),) * 2, Image.LANCZOS)
-              tile = Image.new("RGBA", (px, px), (225, 238, 252, 255))
+              tile = Image.new("RGBA", (px, px), (230, 236, 228, 255))
               tile.paste(k, ((px - k.width) // 2, (px - k.height) // 2), k)
               m = Image.new("L", (px, px), 0)
               ImageDraw.Draw(m).ellipse((0, 0, px - 1, px - 1), fill=255)
