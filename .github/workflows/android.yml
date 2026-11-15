@@ -44,22 +44,25 @@ jobs:
         run: |
           mkdir -p ~/.android
           cp debug.keystore ~/.android/debug.keystore
-          sed -i -E "s/versionCode [0-9]+/versionCode ${{ github.run_number }}/; s/versionName \"[^\"]*\"/versionName \"1.1.0\"/" android/app/build.gradle
+          sed -i -E "s/versionCode [0-9]+/versionCode ${{ github.run_number }}/; s/versionName \"[^\"]*\"/versionName \"1.2.0\"/" android/app/build.gradle
           grep -n "versionCode\|versionName" android/app/build.gradle
       - run: npx cap sync android
-      - name: Security hardening (no internet permission, no backup, no debug, no screenshots)
+      - name: Security hardening (internet only for live rates, HTTPS only, no backup, no debug, no screenshots)
         run: |
           python3 - <<'PY'
           import re, glob
           m = "android/app/src/main/AndroidManifest.xml"
           s = open(m, encoding="utf8").read()
           s = s.replace('android:allowBackup="true"', 'android:allowBackup="false"')
-          s = re.sub(r'\s*<uses-permission android:name="android.permission.INTERNET"\s*/>', '', s)
+          if "permission.INTERNET" not in s:
+              s = s.replace("<application", '<uses-permission android:name="android.permission.INTERNET" />\n    <application', 1)
+          if "USE_BIOMETRIC" not in s:
+              s = s.replace("<application", '<uses-permission android:name="android.permission.USE_BIOMETRIC" />\n    <application', 1)
           if "POST_NOTIFICATIONS" not in s:
               s = s.replace("<application", '<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />\n    <application', 1)
           if "usesCleartextTraffic" not in s:
               s = s.replace("<application", '<application android:usesCleartextTraffic="false"', 1)
-          assert 'allowBackup="false"' in s and "permission.INTERNET" not in s
+          assert 'allowBackup="false"' in s and "permission.INTERNET" in s and 'usesCleartextTraffic="false"' in s
           open(m, "w", encoding="utf8").write(s)
           f = glob.glob("android/app/src/main/java/**/MainActivity.java", recursive=True)[0]
           j = open(f, encoding="utf8").read()
