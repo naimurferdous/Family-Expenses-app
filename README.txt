@@ -34,3 +34,13 @@ Excel/CSV/রিপোর্ট/JSON এক্সপোর্ট ও রিস�
 == ৬. নিরাপত্তা (বিল্ডে নিজে প্রয়োগ হয়) ==
 ইন্টারনেট শুধু লাইভ মুদ্রার রেটের জন্য (HTTPS) | অ্যাপ ব্যাকআপ বন্ধ | ডিবাগ বন্ধ | স্ক্রিনশট/রিসেন্ট প্রিভিউ বন্ধ
 AES-256 এনক্রিপশন (পাসওয়ার্ড দিলে) | ভুল পাসওয়ার্ডে ক্রমবর্ধমান অপেক্ষা
+
+
+== ১.৩.০ — আপডেট ও সাইনিং ==
+অ্যাপের ভেতরে আপডেট: সেটিংস > আপডেট। অ্যাপ GitHub Releases দেখে (api.github.com), নতুন সংস্করণ থাকলে APK নামায়,
+SHA-256 মিলিয়ে Android ইনস্টলারে দেয়। Android নিজেও দেখে আপডেটটি একই কী দিয়ে সই করা কিনা।
+রিলিজ করতে: package.json-এ version বাড়ান, RELEASE_NOTES.md লিখুন, main-এ push করুন — workflow signed APK + SHA-256 সহ Release তৈরি করে।
+সাইনিং: Play Protect-এর সতর্কতা কমাতে ডিবাগ কী বাদ দিয়ে প্রাইভেট রিলিজ কী ব্যবহার হয়। GitHub Secrets: KEYSTORE_BASE64, KEYSTORE_PASSWORD,
+KEY_ALIAS, KEY_PASSWORD (বিস্তারিত: SIGNING-SETUP.txt, যেটি repo-তে রাখবেন না)। Secrets না থাকলে workflow ডিবাগ-সই APK বানায় ও সতর্ক করে।
+native/ApkInstallerPlugin.java: ছোট নিজস্ব Android প্লাগইন (শুধু GitHub থেকে HTTPS ডাউনলোড, SHA-256 হিসাব, অ্যাপের cache থেকে ইনস্টল)।
+IN_APP_INSTALL: "false" করলে REQUEST_INSTALL_PACKAGES ও প্লাগইন বাদ — অ্যাপ শুধু রিলিজ পাতা খোলে।
