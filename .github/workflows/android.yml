@@ -3,6 +3,12 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+permissions:
+  contents: write
+env:
+  # "true"  = in-app one-tap update installer (adds the REQUEST_INSTALL_PACKAGES permission + a small native plugin)
+  # "false" = leaner APK: the app still tells you about updates but opens the release page instead
+  IN_APP_INSTALL: "true"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -40,43 +46,108 @@ jobs:
               r.save(o + "/ic_launcher_round.png")
           PY
           rm -rf android/app/src/main/res/mipmap-anydpi-v26
-      - name: Fixed signing key and version (enables updates)
+      - name: Version, update config and signing key
+        env:
+          KS_B64: ${{ secrets.KEYSTORE_BASE64 }}
         run: |
-          mkdir -p ~/.android
-          cp debug.keystore ~/.android/debug.keystore
-          sed -i -E "s/versionCode [0-9]+/versionCode ${{ github.run_number }}/; s/versionName \"[^\"]*\"/versionName \"1.2.0\"/" android/app/build.gradle
+          VERSION=$(node -p "require('./package.json').version")
+          sed -i -E "s/versionCode [0-9]+/versionCode ${{ github.run_number }}/; s/versionName \"[^\"]*\"/versionName \"$VERSION\"/" android/app/build.gradle
           grep -n "versionCode\|versionName" android/app/build.gradle
+          if [ -n "$KS_B64" ]; then
+            echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+            echo "SIGNED=release" >> "$GITHUB_ENV"
+            echo "KS_PATH=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+            SIGNED=true
+          else
+            echo "::warning title=Debug signing::No KEYSTORE_BASE64 secret found - building a DEBUG-signed APK, which Play Protect distrusts. See SIGNING-SETUP.txt."
+            mkdir -p ~/.android && cp debug.keystore ~/.android/debug.keystore
+            echo "SIGNED=debug" >> "$GITHUB_ENV"
+            SIGNED=false
+          fi
+          printf '{"repo":"%s","version":"%s","build":%s,"signed":%s,"installer":%s}\n' "${{ github.repository }}" "$VERSION" "${{ github.run_number }}" "$SIGNED" "$IN_APP_INSTALL" > www/update-config.json
+          cat www/update-config.json
       - run: npx cap sync android
-      - name: Security hardening (internet only for live rates, HTTPS only, no backup, no debug, no screenshots)
+      - name: Hardening, permissions, signing config and native installer
         run: |
           python3 - <<'PY'
-          import re, glob
+          import re, glob, os
+          inapp = os.environ.get("IN_APP_INSTALL") == "true"
           m = "android/app/src/main/AndroidManifest.xml"
           s = open(m, encoding="utf8").read()
           s = s.replace('android:allowBackup="true"', 'android:allowBackup="false"')
-          if "permission.INTERNET" not in s:
-              s = s.replace("<application", '<uses-permission android:name="android.permission.INTERNET" />\n    <application', 1)
-          if "USE_BIOMETRIC" not in s:
-              s = s.replace("<application", '<uses-permission android:name="android.permission.USE_BIOMETRIC" />\n    <application', 1)
-          if "POST_NOTIFICATIONS" not in s:
-              s = s.replace("<application", '<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />\n    <application', 1)
+          perms = ["INTERNET", "USE_BIOMETRIC", "POST_NOTIFICATIONS"] + (["REQUEST_INSTALL_PACKAGES"] if inapp else [])
+          for p in perms:
+              if "permission." + p not in s:
+                  s = s.replace("<application", '<uses-permission android:name="android.permission.' + p + '" />\n    <application', 1)
           if "usesCleartextTraffic" not in s:
               s = s.replace("<application", '<application android:usesCleartextTraffic="false"', 1)
           assert 'allowBackup="false"' in s and "permission.INTERNET" in s and 'usesCleartextTraffic="false"' in s
+          assert inapp == ("REQUEST_INSTALL_PACKAGES" in s)
           open(m, "w", encoding="utf8").write(s)
           f = glob.glob("android/app/src/main/java/**/MainActivity.java", recursive=True)[0]
           j = open(f, encoding="utf8").read()
-          j = re.sub(r"class MainActivity extends BridgeActivity\s*\{\s*\}", "class MainActivity extends BridgeActivity {\n  @Override public void onCreate(android.os.Bundle b) { super.onCreate(b); getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_SECURE, android.view.WindowManager.LayoutParams.FLAG_SECURE); }\n}", j)
+          pkg = re.search(r"^package\s+([\w.]+);", j, re.M).group(1)
+          reg = "registerPlugin(ApkInstallerPlugin.class); " if inapp else ""
+          j = re.sub(r"class MainActivity extends BridgeActivity\s*\{\s*\}", "class MainActivity extends BridgeActivity {\n  @Override public void onCreate(android.os.Bundle b) { " + reg + "super.onCreate(b); getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_SECURE, android.view.WindowManager.LayoutParams.FLAG_SECURE); }\n}", j)
           assert "FLAG_SECURE" in j
           open(f, "w", encoding="utf8").write(j)
+          if inapp:
+              src = open("native/ApkInstallerPlugin.java", encoding="utf8").read()
+              src = re.sub(r"^package\s+[\w.]+;", "package " + pkg + ";", src, count=1, flags=re.M)
+              open(os.path.join(os.path.dirname(f), "ApkInstallerPlugin.java"), "w", encoding="utf8").write(src)
+              fp = "android/app/src/main/res/xml/file_paths.xml"
+              x = open(fp, encoding="utf8").read()
+              if "<cache-path" not in x:
+                  x = x.replace("</paths>", '  <cache-path name="update_cache" path="." />\n</paths>')
+                  open(fp, "w", encoding="utf8").write(x)
+              assert "FileProvider" in s
           g = "android/app/build.gradle"
           b = open(g, encoding="utf8").read()
-          assert "buildTypes {" in b
+          assert "buildTypes {" in b and "android {" in b
+          b = b.replace("android {", "android {\n    lint {\n        checkReleaseBuilds false\n        abortOnError false\n    }", 1)
           b = b.replace("buildTypes {", "buildTypes {\n        debug { debuggable false }", 1)
+          if os.environ.get("SIGNED") == "release":
+              sign = '    signingConfigs {\n        release {\n            storeFile file(System.getenv("KS_PATH"))\n            storePassword System.getenv("KS_PASS")\n            keyAlias System.getenv("KEY_ALIAS")\n            keyPassword System.getenv("KEY_PASS")\n        }\n    }\n'
+              b = b.replace("buildTypes {", sign + "    buildTypes {", 1)
+              b, n = re.subn(r"(buildTypes\s*\{.*?release\s*\{)", r"\1\n            signingConfig signingConfigs.release", b, count=1, flags=re.S)
+              assert n == 1
           open(g, "w", encoding="utf8").write(b)
           PY
-      - run: cd android && chmod +x gradlew && ./gradlew assembleDebug
+      - name: Build APK
+        env:
+          KS_PASS: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASS: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          cd android && chmod +x gradlew
+          if [ "$SIGNED" = "release" ]; then
+            ./gradlew assembleRelease
+            cp app/build/outputs/apk/release/app-release.apk ../FamilyExpenses.apk
+          else
+            ./gradlew assembleDebug
+            cp app/build/outputs/apk/debug/app-debug.apk ../FamilyExpenses.apk
+          fi
+      - name: Verify the APK signature
+        run: |
+          APKSIGNER=$(ls "$ANDROID_HOME"/build-tools/*/apksigner | sort -V | tail -1)
+          "$APKSIGNER" verify --verbose --print-certs FamilyExpenses.apk | tee sig.txt
+          grep -i "SHA-256 digest" sig.txt | head -1
       - uses: actions/upload-artifact@v4
         with:
           name: family-budget-apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          path: FamilyExpenses.apk
+      - name: Publish a GitHub Release (only for a new version, signed builds only)
+        if: env.SIGNED == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          TAG="v$VERSION"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists - bump the version in package.json to publish an update."
+            exit 0
+          fi
+          cp FamilyExpenses.apk "FamilyExpenses-$TAG.apk"
+          SHA=$(sha256sum "FamilyExpenses-$TAG.apk" | cut -d' ' -f1)
+          { cat RELEASE_NOTES.md 2>/dev/null || echo "Family Expenses $TAG"; printf '\n\nSHA-256: %s\n' "$SHA"; } > notes.md
+          gh release create "$TAG" "FamilyExpenses-$TAG.apk" --title "Family Expenses $TAG" --notes-file notes.md
