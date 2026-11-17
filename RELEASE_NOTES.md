@@ -1,9 +1,5 @@
-What's new in 1.3.0 / ১.৩.০-এ নতুন কী
+What's new in 1.3.1 / ১.৩.১-এ নতুন কী
 
-- In-app updates: Settings > Updates checks GitHub for new releases, verifies the download (SHA-256) and hands it to Android to install.
-  অ্যাপের ভেতরেই আপডেট: সেটিংস > আপডেট থেকে নতুন সংস্করণ দেখা, SHA-256 যাচাই করে ইনস্টল।
-- Signed with a private release key (a one-time reinstall is needed; see SIGNING-SETUP.txt).
-  প্রাইভেট রিলিজ কী দিয়ে সই করা (একবার নতুন করে ইনস্টল করতে হবে)।
-- Backups can now include vault documents and your settings, so reinstalling is safe.
-  ব্যাকআপে এখন ভল্টের ডকুমেন্ট ও সেটিংস থাকে।
-- Fingerprint unlock, multiple vault attachments, live USD/BDT rates (previous releases).
+- Utilities: new electricity meters start with Bangladesh residential rates (BERC tariff, June 2026: slabs, lifeline rule, 5% VAT, demand charge). Adding a reading now shows the units used and an approximate bill. Existing meters: open Rates and tap the Bangladesh button.
+  ইউটিলিটি: নতুন বিদ্যুৎ মিটারে বাংলাদেশের আবাসিক রেট (BERC, জুন ২০২৬) আগে থেকেই বসানো। রিডিং যোগ করলে ব্যবহার ও আনুমানিক বিল দেখায়। পুরনো মিটারে "রেট" খুলে বাংলাদেশ বাটন চাপুন।
+- Gas and water rates are not pre-filled; set them from your own bill.
