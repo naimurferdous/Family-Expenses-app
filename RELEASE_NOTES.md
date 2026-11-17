@@ -1,7 +1,8 @@
-What's new in 1.3.2 / ১.৩.২-এ নতুন কী
+What's new in 1.3.3 / ১.৩.৩-এ নতুন কী
 
-- Utilities: electricity meters use Bangladesh residential rates (BERC tariff, June 2026: slabs, lifeline rule, 5% VAT, demand charge). Adding a reading shows units used and an approximate bill. For existing meters open Rates and tap the Bangladesh button.
-  ইউটিলিটি: বিদ্যুৎ মিটারে বাংলাদেশের আবাসিক রেট (BERC, জুন ২০২৬)। রিডিং যোগ করলে ব্যবহার ও আনুমানিক বিল দেখায়। পুরনো মিটারে "রেট" খুলে বাংলাদেশ বাটন চাপুন।
-- Clearer hint: a bill estimate needs two readings.
-  বিলের অনুমানের জন্য দুটি রিডিং লাগে — এই বার্তা পরিষ্কার করা হয়েছে।
+- Utilities: new "Quick bill estimate" box - type the units and see the approximate bill at once (Bangladesh BERC rates, June 2026). No second reading needed.
+  ইউটিলিটি: নতুন "দ্রুত বিলের হিসাব" - ইউনিট লিখলেই আনুমানিক বিল দেখায়, দ্বিতীয় রিডিং লাগে না।
+- The Bangladesh rates button now saves straight away (no need to scroll for Save).
+  বাংলাদেশ রেট বাটন চাপলেই সেভ হয়।
+- Electricity meters also show units used and approximate bill when you add a reading.
 - Gas and water rates are not pre-filled; set them from your own bill.
