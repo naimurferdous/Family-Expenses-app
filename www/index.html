@@ -119,9 +119,41 @@ body.priv canvas{filter:blur(10px)}body.priv input[type=number]:not(:focus){filt
 .tp.b{background:var(--cd);color:var(--tx);padding:11px 14px 11px 36px;border-radius:16px;font-weight:400;cursor:default;transition:none;display:block}.tp.b:active{transform:none}
 .spn{display:inline-block;width:10px;height:10px;border:2px solid var(--tk);border-top-color:var(--pr);border-radius:50%;animation:spin .8s linear infinite;vertical-align:-1px}
 .bio{width:100%}
+
+/* v2.0.0 Daily Life Master OS styles */
+.qcap{display:flex;gap:8px;align-items:center;background:var(--cd);border:1.5px solid var(--bd);border-radius:18px;padding:6px 8px 6px 12px;margin:10px 0 6px;box-shadow:0 6px 18px rgb(var(--shr)/.08)}
+.qcap input{border:0;background:transparent;padding:6px 0;margin:0;flex:1;font:inherit;color:var(--tx);outline:none}
+.qcap button{flex:none;border-radius:12px;padding:7px 12px}
+.wstrip{display:flex;gap:8px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:none}
+.wpill{flex:0 0 auto;background:var(--in);border:1px solid var(--bd);border-radius:16px;padding:8px 12px;cursor:pointer;min-width:108px}
+.wpill small{display:block;font-size:11px;color:var(--mu)}
+.wpill b{font-size:13.5px}
+.lgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}
+.lbox{background:var(--in);border-radius:16px;padding:10px 8px;text-align:center;cursor:pointer}
+.lbox b{display:block;font-size:16px;margin-top:2px}
+.lbox small{font-size:11px;color:var(--mu)}
+.bdg{display:inline-block;padding:2px 8px;border-radius:99px;font-size:10.5px;font-weight:700;background:var(--cr);color:var(--pr)}
+.bdg.w{background:#e0a95526;color:var(--am)}
+.bdg.b{background:#c8504a26;color:var(--rd)}
+.bdg.g{background:#3f8f7b26;color:var(--gn)}
+.sdots{display:flex;gap:4px;margin-top:4px}
+.sdots i{width:14px;height:14px;border-radius:50%;background:var(--tk);display:inline-block;font-style:normal;font-size:9px;line-height:14px;text-align:center;color:var(--mu)}
+.sdots i.on{background:var(--pr);color:#fff}
+.pomo{text-align:center;padding:12px;background:var(--in);border-radius:20px;margin:8px 0}
+.pomo .tm{font-size:38px;font-weight:700;letter-spacing:1px;font-variant-numeric:tabular-nums;margin:4px 0}
+.mgrid{display:grid;grid-template-columns:1fr;gap:8px}
+.mrow2{background:var(--in);border-radius:16px;padding:10px 12px}
+.ice{background:linear-gradient(135deg,var(--cr),var(--in));border:1.5px solid var(--bd);border-radius:20px;padding:12px 14px;margin-bottom:10px}
+.ice .bg{display:inline-block;background:var(--rd);color:#fff;font-weight:700;padding:2px 9px;border-radius:99px;font-size:12px}
+.medp{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:99px;border:1.5px solid var(--bd);background:var(--cd);font-size:11.5px;cursor:pointer;margin:2px}
+.medp.on{background:var(--pr);color:#fff;border-color:var(--pr)}
+
 </style></head><body><main>
 <div class="top"><div class="lg"><img src="logo.png" alt=""><b>পরিবারের টাকার হিসাব</b></div><div class="tb"><button class="pl" id="lg" onclick="setLang()">EN</button><button class="pl" id="pvb" onclick="togPriv()" aria-label="Privacy mode"></button><button class="pl" onclick="th()" aria-label="Theme">🌓</button></div></div>
-<section id="t-h"><div class="hero"><div class="mn"><button onclick="mv(-1)">‹</button><b id="ml"></b><button onclick="mv(1)">›</button></div><div class="hc2" id="hc2"><button class="eye" id="eye" onclick="eyeT()" aria-label="Hide or show balance"></button><small>হাতে বাকি</small><div class="big" id="hl"></div><div id="hs"></div></div></div><h3 class="sh">এ মাসের সারাংশ</h3><div class="cards" id="hc"></div><div class="cd hide" id="alh"></div><h3 class="sh">খাত</h3><div class="ctg" id="ct"></div><div id="prh"></div><div class="cd bzc" id="bzh" onclick="bzOpen()"></div><div class="cd bzc" id="clh" onclick="go('k')"></div><div class="cd bzc" id="ish" onclick="go('i')"></div>
+<section id="t-h"><div class="hero"><div class="mn"><button onclick="mv(-1)">‹</button><b id="ml"></b><button onclick="mv(1)">›</button></div><div class="hc2" id="hc2"><button class="eye" id="eye" onclick="eyeT()" aria-label="Hide or show balance"></button><small>হাতে বাকি</small><div class="big" id="hl"></div><div id="hs"></div></div></div><h3 class="sh">এ মাসের সারাংশ</h3><div class="cards" id="hc"></div>
+<div class="qcap"><input id="qcapi" placeholder="⚡ দ্রুত লিখুন: ৫০০ রিকশা / ডিম ১৪০ / কাজ: কল..." onkeydown="if(event.key==='Enter')qcapRun()"><button class="b s" onclick="qcapRun()">⚡</button></div>
+<div class="wstrip" id="wlh"></div>
+<div class="cd" id="lfh"></div><div class="cd hide" id="alh"></div><h3 class="sh">খাত</h3><div class="ctg" id="ct"></div><div id="prh"></div><div class="cd bzc" id="bzh" onclick="bzOpen()"></div><div class="cd bzc" id="clh" onclick="go('k')"></div><div class="cd bzc" id="ish" onclick="go('i')"></div>
 <div class="cd"><h2>💡 পরামর্শ</h2><div id="tp"></div></div>
 <div class="cd" id="bl"><h2>🔁 এ মাসের নিয়মিত বিল</h2><div id="bw"></div></div>
 <div class="cd"><h2>বাজেট বনাম বাস্তব</h2><div id="pb"></div></div>
@@ -137,7 +169,7 @@ body.priv canvas{filter:blur(10px)}body.priv input[type=number]:not(:focus){filt
 <div class="cd"><h2>💡 সঞ্চয়ের পরামর্শ</h2><div id="st"></div></div></div>
 <details class="cd"><summary>🔮 প্রজেক্টর — জমালে কত হবে?</summary><div class="g" style="gap:8px"><div><small>মাসিক জমা</small><input type="number" id="pp" oninput="pj()"></div><div><small>বছর</small><input type="number" id="py" value="5" oninput="pj()"></div><div><small>সুদ/মুনাফা % (বার্ষিক)</small><input type="number" id="pr" value="7.5" step="0.5" oninput="pj()"></div><div><small>মূল্যস্ফীতি %</small><input type="number" id="pf" value="8" step="0.5" oninput="pj()"></div><div><small>কর % (লাভের ওপর)</small><input type="number" id="pt" value="10" oninput="pj()"></div><div><small>লক্ষ্য অঙ্ক (উল্টো হিসাব)</small><input type="number" id="pg" value="500000" oninput="pj()"></div></div><div id="pres" style="margin-top:10px"></div><div class="cv" style="height:200px"><canvas id="c2"></canvas></div><small>হার ও কর অনুমান — নিজের ব্যাংকের তথ্য দিন।</small></details></section>
 
-<section id="t-r" class="hide"><div id="r-hd"></div><div id="r-b"></div><details class="cd"><summary>ℹ️ অ্যাপ সম্পর্কে</summary><div style="text-align:center;padding:8px 0;line-height:1.9"><img src="logo.png" alt="Family Expenses" style="width:96px;height:96px;border-radius:22px"><b style="font-size:18px">Family Expenses</b><br><small>Version 1.4.3</small><hr style="border:0;border-top:1px solid var(--bd,#8883);margin:10px 0"><small>Build By</small><br><b>Naimur Rahman Ferdous</b><br><small>Dedicated to</small><br><b>Ihan 💙</b></div></details></section>
+<section id="t-r" class="hide"><div id="r-hd"></div><div id="r-b"></div><details class="cd"><summary>ℹ️ অ্যাপ সম্পর্কে</summary><div style="text-align:center;padding:8px 0;line-height:1.9"><img src="logo.png" alt="Family Expenses" style="width:96px;height:96px;border-radius:22px"><b style="font-size:18px">Family Expenses</b><br><small>Version 2.0.0 — Daily Life Master OS</small><hr style="border:0;border-top:1px solid var(--bd,#8883);margin:10px 0"><small>Build By</small><br><b>Naimur Rahman Ferdous</b><br><small>Dedicated to</small><br><b>Ihan 💙</b></div></details></section>
 <section id="t-u" class="hide"><div id="u-hd"></div><div class="sg seg psg"></div><div id="u-b"></div></section>
 <section id="t-m" class="hide"><div id="m-hd"></div><div class="sg seg psg"></div><div id="m-tabs"></div><div id="m-c"></div></section>
 <section id="t-i" class="hide"><div id="i-hd"></div><div id="i-hs"></div><div id="i-sg"></div><div id="i-ak"></div><div id="i-cm"></div></section>
@@ -157,10 +189,16 @@ body.priv canvas{filter:blur(10px)}body.priv input[type=number]:not(:focus){filt
 <section id="t-w" class="hide"><button class="b o s" style="margin-bottom:10px" onclick="go('r')">← আরও</button><div class="cd"><div class="r"><select id="xss" onchange="SH=this.value;sheetDraw()"></select><button class="b o s" onclick="sheetNew()">+ শীট</button><button class="x" onclick="sheetDrop()">🗑</button></div><input id="xsn" placeholder="শীটের নাম" onchange="sheetCur().n=this.value;sv_();sheetDraw()" style="margin:8px 0"><div id="xsr"></div><button class="b o s" onclick="sheetAdd()">+ সারি</button><div id="xst" style="margin-top:8px"></div></div></section>
 <section id="t-z" class="hide"><div id="z-hd"></div><div class="cd"><div class="r"><button class="b o s" onclick="mv(-1)">‹</button><b id="bzm"></b><button class="b o s" onclick="mv(1)">›</button></div><div class="bzs" id="bzs"></div></div><div class="cd" id="z-q"></div><div id="z-t"></div><div id="bzx"></div><details id="z-p"></details></section>
 <section id="t-k" class="hide"><div class="hd"><h2>ক্যালেন্ডার</h2><small>বাংলাদেশের ছুটি ও দিনের সব কাজ</small></div><div class="cd"><div class="r"><button class="b o s" onclick="mv(-1)">‹</button><b id="cm"></b><button class="b o s" onclick="mv(1)">›</button></div><div class="cwk" id="cw"></div><div class="cgd" id="cg"></div><div class="cleg"><span><u></u>খরচ</span><span><u class="g"></u>আয়/সঞ্চয়</span><span><u class="z"></u>বাজার তালিকা</span><span><u class="r"></u>বিল</span></div></div><div class="cd" id="cs"></div><div class="cd"><h2>🎉 এ মাসের ছুটি</h2><div id="chl"></div></div></section>
+
+<section id="t-wl" class="hide"><div id="wl-hd"></div><div id="wl-b"></div></section>
+<section id="t-td" class="hide"><div id="td-hd"></div><div id="td-b"></div></section>
+<section id="t-kt" class="hide"><div id="kt-hd"></div><div id="kt-b"></div></section>
+<section id="t-hm" class="hide"><div id="hm-hd"></div><div id="hm-b"></div></section>
+<section id="t-fm" class="hide"><div id="fm-hd"></div><div id="fm-b"></div></section>
 </main>
 <button class="b fab" onclick="op('e')">+</button>
 <nav id="nv"></nav><div id="ts"></div><dialog id="pkd"></dialog><dialog id="shd"></dialog><dialog id="pinl"></dialog>
-<dialog id="dg"><div class="sg" id="sg"></div><input id="fa" type="number" inputmode="decimal" placeholder="টাকা" onkeydown="if(event.key==='Enter')sv()"><div class="chips" id="qk"></div><select id="fc"></select><input id="fd" type="date"><input id="fn" placeholder="নোট (ঐচ্ছিক)" onkeydown="if(event.key==='Enter')sv()"><div id="rcr"></div><div style="display:flex;gap:8px"><button class="b" style="flex:1" onclick="sv()">সেভ</button><button class="b o hide" id="fx" onclick="rm()">মুছুন</button><button class="b o" onclick="$('dg').close()">বাতিল</button></div></dialog>
+<dialog id="dg"><div class="sg" id="sg"></div><input id="fa" type="number" inputmode="decimal" placeholder="টাকা" onkeydown="if(event.key==='Enter')sv()"><div class="chips" id="qk"></div><select id="fc"></select><select id="fw"></select><input id="fd" type="date"><input id="fn" placeholder="নোট (ঐচ্ছিক)" onkeydown="if(event.key==='Enter')sv()"><div id="rcr"></div><div style="display:flex;gap:8px"><button class="b" style="flex:1" onclick="sv()">সেভ</button><button class="b o hide" id="fx" onclick="rm()">মুছুন</button><button class="b o" onclick="$('dg').close()">বাতিল</button></div></dialog>
 <script>
 let LG='bn';try{LG=localStorage.getItem('lg4')||'bn'}catch(e){}let LC=LG==='en'?'en-US':'bn-BD';let PRIV=false;try{PRIV=JSON.parse(localStorage.getItem('set5')||'{}').priv==1}catch(e){}
 const SV=p=>`<svg viewBox="0 0 24 24">${p}</svg>`,I={h:SV('<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'),t:SV('<path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/>'),b:SV('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/>'),r:SV('<path d="M4 7h16M4 12h16M4 17h10"/>')};
@@ -177,7 +215,7 @@ const ml=m=>{const[y,o]=m.split('-');return new Date(y,o-1,1).toLocaleDateString
 function ts(m,f){const t=$('ts');t.textContent=m;t.onclick=f||null;t.style.pointerEvents=f?'auto':'none';t.style.opacity=1;clearTimeout(t.h);t.h=setTimeout(()=>{t.style.opacity=0;t.style.pointerEvents='none'},f?5000:1900)}
 function th(){const r=document.documentElement,d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark';try{localStorage.setItem('th4',r.dataset.theme)}catch(e){}palSync();render()}
 try{const p=localStorage.getItem('pal4');if(p)document.documentElement.dataset.pal=p}catch(e){}try{const t=localStorage.getItem('th4');if(t)document.documentElement.dataset.theme=t}catch(e){}
-const TB=[['h',I.h,'হোম'],['t',I.t,'লেনদেন'],['b',I.b,'পরিকল্পনা'],['r',I.r,'আরও']],SC=['h','t','b','s','r','c','n','w','z','k','u','m','i','tx','st','sc','bk','rp','ln','vt'];
+const TB=[['h',I.h,'হোম'],['t',I.t,'লেনদেন'],['b',I.b,'পরিকল্পনা'],['r',I.r,'আরও']],SC=['h','t','b','s','r','c','n','w','z','k','u','m','i','tx','st','sc','bk','rp','ln','vt','wl','td','kt','hm','fm'];
 $('nv').innerHTML=TB.map(t=>`<button data-t="${t[0]}" onclick="go('${t[0]}')"><b>${t[1]}</b>${t[2]}</button>`).join('');
 function go(t){TAB=t;SC.forEach(x=>$('t-'+x).classList.toggle('hide',x!==t));TB.forEach(x=>document.querySelector(`nav [data-t=${x[0]}]`).classList.toggle('on',x[0]===t||(t==='s'&&x[0]==='b')||(t==='z'&&x[0]==='t')||(t==='k'&&x[0]==='h')||('cnw'.includes(t)&&x[0]==='r')));scrollTo(0,0);document.querySelector('.fab').style.display=t==='z'?'none':'';render()}
 function mv(n){const[y,o]=M.split('-').map(Number),d=new Date(y,o-1+n,1);M=`${d.getFullYear()}-${pad(d.getMonth()+1)}`;render()}
@@ -681,7 +719,7 @@ function hjDate(s){const d=dd(s);d.setDate(d.getDate()+sget('hj',-1));try{const 
 const inD=n=>LG==='en'&&n===1?'tomorrow':(LG==='en'?'in '+N(n)+' days':N(n)+' দিন পর'),N1=x=>(+x||0).toLocaleString(LC,{maximumFractionDigits:1}),N2=x=>(+x||0).toLocaleString(LC,{maximumFractionDigits:2});
 
 /*==== N2 NAVIGATION: tab/section router, Plan segments, More hub ====*/
-const HLM={s:'b',u:'b',m:'b',z:'t',k:'h',i:'h'},FABON=['h','t','k'];
+const HLM={s:'b',u:'b',m:'b',z:'t',k:'h',i:'h',wl:'h',td:'h',kt:'t',hm:'r',fm:'r'},FABON=['h','t','k','td','wl'];
 function go(t){TAB=t;SC.forEach(x=>$('t-'+x).classList.toggle('hide',x!==t));const hl=HLM[t]||(['h','t','b','r'].includes(t)?t:'r');TB.forEach(x=>document.querySelector(`nav [data-t=${x[0]}]`).classList.toggle('on',x[0]===hl));scrollTo(0,0);document.querySelector('.fab').style.display=FABON.includes(t)?'':'none';psgDraw();render()}
 function render(){const f=RM[TAB];f&&f()}
 function psgDraw(){const A=[['b',L('বাজেট','Budget')],['s',L('সঞ্চয়','Savings')],['u',L('সাবস্ক্রিপশন','Subscriptions')],['m',L('ইউটিলিটি','Utilities')]];document.querySelectorAll('.psg').forEach(e=>{e.innerHTML=A.map(a=>`<button class="${a[0]===TAB?'on':''}" onclick="go('${a[0]}')">${a[1]}</button>`).join('')})}
@@ -1151,6 +1189,487 @@ return `<div class="cd" id="gdc">${hd}<small>${L('এক ট্যাপে ব�
 
 const RM={h:rH,t:rT,b:rB,s:rS,u:subDraw,m:mtDraw,r:hubDraw,c:calcDraw,n:noteDraw,w:sheetDraw,z:bzDraw,k:calDraw,i:insDraw,tx:taxDraw,st:stPage,sc:scDraw,bk:bkDraw,rp:rpPage,ln:lnDraw,vt:vtDraw};
 function bootX(){if(sget('pva',0))PRIV=true;document.body.classList.toggle('priv',PRIV);privBtn();setTimeout(rcGC,4000);setTimeout(nfSync,3000);setTimeout(()=>fxFetch(false),2500);updCfg().then(()=>{render();if(sget('updA',1)&&sget('net',1)&&Date.now()-sget('updT',0)>12*36e5)setTimeout(()=>updCheck(false),2000)})}
+
+
+
+/*==== N12-N18 DAILY LIFE MASTER OS (v2.0.0): Wallets, Tasks/Habits/Pomodoro, Pantry/Meals/Expiry, Staff/Assets/COD, Family/Child/Health, Smart Capture & Evening Review ====*/
+
+/* --- N12: MULTI-WALLET & ACCOUNT HUB --- */
+const WTYPES=[['cash','💵',L('নগদ ক্যাশ','Cash')],['mfs','📱',L('মোবাইল ওয়ালেট','Mobile Wallet')],['bank','🏦',L('ব্যাংক অ্যাকাউন্ট','Bank Account')],['card','💳',L('ক্রেডিট কার্ড','Credit Card')]];
+function wlBal(w){
+  let b=+w.b0||0;
+  D.tx.forEach(x=>{
+    if(x.w===w.id){
+      if(x.k==='i')b+=+x.a||0;
+      else if(x.k==='e'||x.k==='s')b-=+x.a||0;
+    }
+  });
+  (D.wtr||[]).forEach(tr=>{
+    if(tr.f===w.id)b-=(+tr.a||0)+(+tr.fee||0);
+    if(tr.t===w.id)b+=+tr.a||0;
+  });
+  return b;
+}
+function wlStrip(){
+  const e=$('wlh');if(!e||!D.wl)return;
+  e.innerHTML=D.wl.map(w=>`<div class="wpill" onclick="go('wl')"><small>${w.e||'💳'} ${E(w.n)}</small><b>${B(wlBal(w))}</b></div>`).join('')
+    +`<div class="wpill" onclick="wlTrForm()" style="display:flex;align-items:center;justify-content:center;min-width:86px"><b>⇄ ${L('ট্রান্সফার','Transfer')}</b></div>`;
+}
+function wlDraw(){
+  $('wl-hd').innerHTML=hd(L('ওয়ালেট ও অ্যাকাউন্ট','Wallets & accounts'),L('নগদ, বিকাশ, নগদ, ব্যাংক ও কার্ডের ব্যালেন্স','Cash, bKash, Nagad, Bank & Card balances'),'r');
+  const tot=D.wl.reduce((s,w)=>s+(w.tp==='card'?0:wlBal(w)),0);
+  const debt=D.wl.reduce((s,w)=>s+(w.tp==='card'&&wlBal(w)<0?Math.abs(wlBal(w)):0),0);
+  const trs=(D.wtr||[]).slice().sort((a,b)=>b.d.localeCompare(a.d)||b.id-a.id).slice(0,12);
+  const wmap=Object.fromEntries(D.wl.map(w=>[w.id,w]));
+  $('wl-b').innerHTML=`<div class="cd"><div class="bzs"><div><small>${L('মোট তরল ব্যালেন্স','Total liquid balance')}</small><b style="color:var(--pr)">${B(tot)}</b></div><div><small>${L('কার্ড বকেয়া','Card due')}</small><b style="color:var(--rd)">${B(debt)}</b></div></div>
+    <div style="display:flex;gap:8px;margin-top:10px"><button class="b" style="flex:1" onclick="wlForm()">＋ ${L('নতুন ওয়ালেট','New wallet')}</button><button class="b o" style="flex:1" onclick="wlTrForm()">⇄ ${L('ট্রান্সফার / ক্যাশ-আউট','Transfer / Cash-out')}</button></div></div>`
+    +`<div class="cd"><h2>💳 ${L('সব ওয়ালেট','All wallets')}</h2>`+D.wl.map(w=>{
+      const bal=wlBal(w);
+      return `<div class="li" onclick="wlForm('${w.id}')"><span class="e">${w.e||'💳'}</span><div><b>${E(w.n)}</b><br><small>${L('শুরুর ব্যালেন্স','Opening')}: ${B(w.b0||0)}</small></div><b style="color:${bal<0?'var(--rd)':'var(--tx)'}">${B(bal)}</b></div>`;
+    }).join('')+`</div>`
+    +(trs.length?`<div class="cd"><h2>⇄ ${L('সাম্প্রতিক ট্রান্সফার','Recent transfers')}</h2>`+trs.map(tr=>{
+      const wf=wmap[tr.f]||{n:'?',e:'💳'},wt=wmap[tr.t]||{n:'?',e:'💳'};
+      return `<div class="li" style="cursor:default"><span class="e">⇄</span><div><b>${E(wf.n)} → ${E(wt.n)}</b><br><small>${dn(tr.d)}${tr.fee?' · '+L('চার্জ ','Fee ')+B(tr.fee):''}${tr.n?' · '+E(tr.n):''}</small></div><b>${B(tr.a)}</b><button class="x" onclick="wlTrDel(${tr.id})">🗑</button></div>`;
+    }).join('')+`</div>`:'');
+}
+function wlForm(id){
+  const w=id?D.wl.find(x=>x.id===id):{n:'',e:'📱',tp:'mfs',b0:0};
+  const ems=['💵','📱','🏦','💳','🪙','👛','💼'];
+  sheet(`<h2>${id?L('ওয়ালেট সম্পাদনা','Edit wallet'):L('নতুন ওয়ালেট','New wallet')}</h2>
+    <small>${L('নাম','Name')}</small><input id="wln" value="${E(w.n)}" placeholder="${L('যেমন: বিকাশ / DBBL ব্যাংক','e.g. bKash / DBBL Bank')}">
+    <small>${L('ধরন','Type')}</small><select id="wlt">${WTYPES.map(t=>`<option value="${t[0]}"${t[0]===w.tp?' selected':''}>${t[1]} ${t[2]}</option>`).join('')}</select>
+    <small>${L('আইকন','Icon')}</small><select id="wle">${ems.map(e=>`<option value="${e}"${e===w.e?' selected':''}>${e}</option>`).join('')}</select>
+    <small>${L('শুরুর ব্যালেন্স (৳)','Opening balance (৳)')}</small><input id="wlb" type="number" inputmode="decimal" value="${w.b0||0}">
+    <div style="display:flex;gap:8px;margin-top:12px"><button class="b" style="flex:1" onclick="wlSave('${id||''}')">${L('সেভ','Save')}</button>${id&&D.wl.length>1?`<button class="b o" onclick="wlDel('${id}')">${L('মুছুন','Delete')}</button>`:''}<button class="b o" onclick="sheetX()">${L('বাতিল','Cancel')}</button></div>`);
+}
+function wlSave(id){
+  const n=$('wln').value.trim();if(!n)return ts(L('ওয়ালেটের নাম দিন','Enter wallet name'));
+  const o={id:id||uid('w'),n,tp:$('wlt').value,e:$('wle').value,b0:+$('wlb').value||0};
+  if(id){const i=D.wl.findIndex(x=>x.id===id);D.wl[i]=o}else D.wl.push(o);
+  sv_();sheetX();render();ts(L('সেভ হয়েছে ✓','Saved ✓'));
+}
+function wlDel(id){
+  if(!confirm(L('এই ওয়ালেট মুছবেন?','Delete this wallet?')))return;
+  D.wl=D.wl.filter(x=>x.id!==id);sv_();sheetX();wlDraw();
+}
+function wlTrForm(){
+  if(D.wl.length<2)return ts(L('কমপক্ষে ২টি ওয়ালেট থাকতে হবে','Need at least 2 wallets'));
+  sheet(`<h2>⇄ ${L('ওয়ালেট ট্রান্সফার','Wallet transfer')}</h2>
+    <small>${L('কোন ওয়ালেট থেকে','From wallet')}</small><select id="wtf">${D.wl.map(w=>`<option value="${w.id}">${w.e} ${E(w.n)} (${B(wlBal(w))})</option>`).join('')}</select>
+    <small>${L('কোন ওয়ালেটে','To wallet')}</small><select id="wtt">${D.wl.map((w,i)=>`<option value="${w.id}"${i===1?' selected':''}>${w.e} ${E(w.n)} (${B(wlBal(w))})</option>`).join('')}</select>
+    <small>${L('টাকার পরিমাণ (৳)','Amount (৳)')}</small><input id="wta" type="number" inputmode="decimal" placeholder="0">
+    <small>${L('ক্যাশ-আউট / ট্রান্সফার চার্জ (ঐচ্ছিক)','Cash-out / transfer fee (optional)')}</small><input id="wtfee" type="number" inputmode="decimal" placeholder="0">
+    <small>${L('তারিখ','Date')}</small><input id="wtd" type="date" value="${today}">
+    <small>${L('নোট','Note')}</small><input id="wtn" placeholder="${L('যেমন: এটিএম উত্তোলন / সেন্ড মানি','e.g. ATM withdrawal / Send money')}">
+    <div style="display:flex;gap:8px;margin-top:12px"><button class="b" style="flex:1" onclick="wlTrSave()">${L('সম্পন্ন করুন','Complete transfer')}</button><button class="b o" onclick="sheetX()">${L('বাতিল','Cancel')}</button></div>`);
+}
+function wlTrSave(){
+  const f=$('wtf').value,t=$('wtt').value,a=+$('wta').value,fee=+$('wtfee').value||0,d=$('wtd').value||today,n=$('wtn').value.trim();
+  if(f===t)return ts(L('ভিন্ন ওয়ালেট বাছুন','Select different wallets'));
+  if(!(a>0))return ts(L('সঠিক পরিমাণ দিন','Enter valid amount'));
+  D.wtr.push({id:Date.now(),f,t,a,fee,d,n});
+  if(fee>0){D.tx.push({id:Date.now()+1,d,k:'e',c:catId('বিনোদন'),a:fee,n:(n||'Transfer')+' fee',w:f})}
+  sv_();sheetX();render();ts(L('ট্রান্সফার সম্পন্ন ✓','Transfer complete ✓'));
+}
+function wlTrDel(id){D.wtr=D.wtr.filter(x=>x.id!==id);sv_();wlDraw();ts(L('মুছে ফেলা হয়েছে','Deleted'))}
+
+/* --- N13: DAILY PLANNER, TOP-3 TASKS, HABITS & POMODORO FOCUS TIMER --- */
+let TD_AREA='all',PM_SEC=25*60,PM_DUR=25*60,PM_RUN=false,PM_TMR=null;
+const AREAS=[['all',L('সব এলাকা','All areas')],['home',L('বাসা','Home')],['mirpur',L('মিরপুর DOHS / কালশী','Mirpur DOHS / Kalshi')],['ibrahimpur',L('ইব্রাহিমপুর','Ibrahimpur')],['central',L('ফার্মগেট / শাহবাগ','Central Dhaka')],['online',L('অনলাইন / কল','Online / Call')]];
+function tdDraw(){
+  $('td-hd').innerHTML=hd(L('দৈনিক কাজ ও রুটিন','Daily planner & habits'),L('সেরা ৩ অগ্রাধিকার, এলাকাভিত্তিক কাজ, অভ্যাস ও ফোকাস','Top-3 priorities, route errands, habits & focus'),'r');
+  const open=D.td.filter(x=>!x.dn).sort((a,b)=>(b.top?1:0)-(a.top?1:0)||(a.d||'9').localeCompare(b.d||'9'));
+  const done=D.td.filter(x=>x.dn).slice(0,10);
+  const filt=TD_AREA==='all'?open:open.filter(x=>x.ar===TD_AREA);
+  const last7=[...Array(7)].map((_,i)=>addD(today,i-6));
+  const mm=String(Math.floor(PM_SEC/60)).padStart(2,'0'),ss=String(PM_SEC%60).padStart(2,'0');
+  $('td-b').innerHTML=`<div class="cd"><h2>➕ ${L('নতুন কাজ / রিমাইন্ডার','Add task / errand')}</h2>
+    <input id="tdn" placeholder="${L('কী করতে হবে? (যেমন: ইন্টারনেট বিল / ডাক্তার কল)','What needs to be done?')}" onkeydown="if(event.key==='Enter')tdAdd()">
+    <div class="bzq" style="margin-top:8px"><select id="tdar">${AREAS.slice(1).map(a=>`<option value="${a[0]}">${a[1]}</option>`).join('')}</select><input id="tdd" type="date" value="${today}"><button class="b" onclick="tdAdd()">➕</button></div>
+    <label style="display:flex;align-items:center;gap:6px;margin-top:8px;font-size:12.5px"><input type="checkbox" id="tdtop" style="width:auto"> ⭐ ${L('আজকের সেরা ৩ অগ্রাধিকার (Top-3)','Today\'s Top-3 priority')}</label>
+  </div>
+  <div class="cd"><h2>✅ ${L('বাকি কাজ ও বাইরের রুট','Tasks & route-clustered errands')} (${N(filt.length)})</h2>
+    <div class="chips" style="margin-bottom:8px">${AREAS.map(a=>`<button class="${TD_AREA===a[0]?'on':''}" onclick="TD_AREA='${a[0]}';tdDraw()">${a[1]}</button>`).join('')}</div>
+    ${filt.length?filt.map(t=>{
+      const ar=(AREAS.find(a=>a[0]===t.ar)||['',''])[1];
+      return `<div class="li" style="cursor:default"><button class="ck" onclick="tdTog('${t.id}')"> </button><div style="flex:1"><b>${t.top?'⭐ ':''}${E(t.n)}</b><br><small>${ar}${t.d?' · '+dn(t.d):''}</small></div><button class="b o s" onclick="tdTop('${t.id}')">${t.top?'★':'☆'}</button><button class="x" onclick="tdDel('${t.id}')">🗑</button></div>`;
+    }).join(''):`<small>${L('এই ফিল্টারে কোনো বাকি কাজ নেই 🎉','No pending tasks in this filter 🎉')}</small>`}
+    ${done.length?`<details style="margin-top:10px"><summary><small>${L('সম্পন্ন হয়েছে','Completed')} (${N(done.length)})</small></summary>`+done.map(t=>`<div class="li" style="opacity:.6;cursor:default"><button class="ck" style="background:var(--gn);border-color:var(--gn)" onclick="tdTog('${t.id}')">✓</button><div style="flex:1;text-decoration:line-through">${E(t.n)}</div><button class="x" onclick="tdDel('${t.id}')">🗑</button></div>`).join('')+`</details>`:''}
+  </div>
+  <div class="cd"><h2>🔥 ${L('দৈনিক অভ্যাস ট্র্যাকার','Daily habit tracker')}</h2>
+    ${D.hb.map(h=>{
+      const logs=h.lg||{},tdOn=!!logs[today];
+      let st=0;for(let i=0;i<30;i++){if(logs[addD(today,-i)])st++;else if(i>0)break;}
+      return `<div class="li" style="cursor:default"><button class="ck" style="${tdOn?'background:var(--gn);border-color:var(--gn)':''}" onclick="hbTog('${h.id}')">${tdOn?'✓':''}</button><div style="flex:1"><b>${h.e||'✨'} ${E(h.n)}</b> <span class="bdg g">${N(st)}d</span><div class="sdots">${last7.map(d=>`<i class="${logs[d]?'on':''}">${d.slice(8)}</i>`).join('')}</div></div><button class="x" onclick="hbDel('${h.id}')">🗑</button></div>`;
+    }).join('')}
+    <div class="bzq" style="margin-top:10px"><input id="hbn" class="f2" placeholder="${L('নতুন অভ্যাস (যেমন: ৮ গ্লাস পানি)','New habit (e.g. 8 glasses water)')}"><button class="b o s" onclick="hbAdd()">＋ ${L('অভ্যাস','Habit')}</button></div>
+  </div>
+  <div class="cd"><h2>⏱ ${L('ডিপ-ওয়ার্ক ফোকাস টাইমার','Deep-work focus timer')}</h2>
+    <div class="pomo">
+      <div class="chips" style="justify-content:center">${[[25,'25m Focus'],[45,'45m Deep'],[15,'15m Sprint'],[5,'5m Break']].map(p=>`<button class="${PM_DUR===p[0]*60?'on':''}" onclick="pomoSet(${p[0]})">${p[1]}</button>`).join('')}</div>
+      <div class="tm" id="pmtm">${mm}:${ss}</div>
+      <div style="display:flex;gap:8px;justify-content:center"><button class="b" onclick="pomoToggle()">${PM_RUN?L('বিরতি','Pause'):L('শুরু করুন','Start')}</button><button class="b o" onclick="pomoReset()">${L('রিসেট','Reset')}</button></div>
+      <small style="display:block;margin-top:8px">${L('আজ সম্পন্ন সেশন: ','Sessions completed today: ')}<b>${N(D.pomo&&D.pomo[today]||0)}</b></small>
+    </div>
+  </div>`;
+}
+function tdAdd(){const n=$('tdn').value.trim();if(!n)return ts(L('কাজের বিবরণ লিখুন','Enter task title'));D.td.unshift({id:uid('td'),n,ar:$('tdar').value,d:$('tdd').value||today,top:$('tdtop').checked?1:0,dn:0});sv_();tdDraw();ts(L('কাজ যোগ হয়েছে ✓','Task added ✓'))}
+function tdTog(id){const t=D.td.find(x=>x.id===id);if(!t)return;t.dn=t.dn?0:1;sv_();render()}
+function tdTop(id){const t=D.td.find(x=>x.id===id);if(!t)return;t.top=t.top?0:1;sv_();tdDraw()}
+function tdDel(id){D.td=D.td.filter(x=>x.id!==id);sv_();tdDraw()}
+function hbTog(id){const h=D.hb.find(x=>x.id===id);if(!h)return;h.lg=h.lg||{};h.lg[today]=h.lg[today]?0:1;sv_();render()}
+function hbAdd(){const n=$('hbn').value.trim();if(!n)return;D.hb.push({id:uid('hb'),e:'✨',n,lg:{}});sv_();tdDraw()}
+function hbDel(id){D.hb=D.hb.filter(x=>x.id!==id);sv_();tdDraw()}
+function pomoSet(m){clearInterval(PM_TMR);PM_RUN=false;PM_DUR=m*60;PM_SEC=PM_DUR;tdDraw()}
+function pomoReset(){clearInterval(PM_TMR);PM_RUN=false;PM_SEC=PM_DUR;tdDraw()}
+function pomoToggle(){
+  if(PM_RUN){clearInterval(PM_TMR);PM_RUN=false;tdDraw();return}
+  PM_RUN=true;tdDraw();
+  PM_TMR=setInterval(()=>{
+    PM_SEC--;
+    const el=$('pmtm');if(el)el.textContent=String(Math.floor(PM_SEC/60)).padStart(2,'0')+':'+String(PM_SEC%60).padStart(2,'0');
+    if(PM_SEC<=0){clearInterval(PM_TMR);PM_RUN=false;PM_SEC=PM_DUR;D.pomo=D.pomo||{};D.pomo[today]=(D.pomo[today]||0)+1;sv_();ts(L('🎉 ফোকাস সেশন সম্পন্ন!','🎉 Focus session complete!'));if(TAB==='td')tdDraw()}
+  },1000);
+}
+
+/* --- N14: PANTRY STAPLE RADAR, WEEKLY MEAL/TIFFIN PLANNER & EXPIRY WATCH --- */
+const DAYS7=[['sat',L('শনি','Sat')],['sun',L('রবি','Sun')],['mon',L('সোম','Mon')],['tue',L('মঙ্গল','Tue')],['wed',L('বুধ','Wed')],['thu',L('বৃহঃ','Thu')],['fri',L('শুক্র','Fri')]];
+function ktDraw(){
+  $('kt-hd').innerHTML=hd(L('প্যান্ট্রি ও রান্নাঘর','Pantry & kitchen'),L('স্টক রাডার, সাপ্তাহিক মেনু ও মেয়াদ সতর্কতা','Staple depletion radar, weekly meals & expiry watch'),'r');
+  $('kt-b').innerHTML=`<div class="cd"><h2>🥫 ${L('প্যান্ট্রি ও নিত্যপণ্যের স্টক রাডার','Pantry & staple depletion radar')}</h2>
+    ${D.pt.map(p=>{
+      const lvl=p.pct<=20?['b',L('শেষ প্রায়','Critical')]:p.pct<=45?['w',L('কমছে','Low')]:['g',L('পর্যাপ্ত','OK')];
+      return `<div class="mrow2" style="margin-bottom:8px">
+        <div class="r"><b>${p.e||'📦'} ${E(p.n)}</b><span class="bdg ${lvl[0]}">${lvl[1]} · ${N(p.pct)}%</span></div>
+        <div class="bar" style="margin:6px 0"><i style="width:${p.pct}%;background:${p.pct<=20?'var(--rd)':p.pct<=45?'var(--am)':'var(--pr)'};animation:none"></i></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">
+          ${[100,50,25,10].map(v=>`<button class="b ${p.pct===v?'':'o'} s" onclick="ptSet('${p.id}',${v})">${N(v)}%</button>`).join('')}
+          <button class="b o s" onclick="ptToBz('${p.id}')">🛒 ${L('বাজারে যোগ','+ Bazaar')}</button>
+          <button class="x" onclick="ptDel('${p.id}')">🗑</button>
+        </div>
+      </div>`;
+    }).join('')}
+    <div class="bzq" style="margin-top:8px"><input id="ptn" class="f2" placeholder="${L('নতুন পণ্য (যেমন: ডায়াপার / সয়াবিন তেল)','New staple (e.g. Diapers / Oil)')}"><button class="b o s" onclick="ptAdd()">＋ ${L('পণ্য','Item')}</button></div>
+  </div>
+  <div class="cd"><h2>🍱 ${L('সাপ্তাহিক মেনু ও টিফিন প্ল্যানার','Weekly meal & tiffin planner')}</h2>
+    <div class="mgrid">${DAYS7.map(([k,lb])=>{
+      const m=D.ml[k]||{b:'',l:'',d:'',t:''};
+      return `<div class="mrow2" onclick="mlEdit('${k}')" style="cursor:pointer">
+        <div class="r"><b>${lb}</b><small style="color:var(--pr)">✎ ${L('সম্পাদনা','Edit')}</small></div>
+        <small>🌅 ${E(m.b||'—')} · ☀️ ${E(m.l||'—')}<br>🌙 ${E(m.d||'—')} · 🎒 ${L('টিফিন/শিশু','Tiffin/Kid')}: ${E(m.t||'—')}</small>
+      </div>`;
+    }).join('')}</div>
+  </div>
+  <div class="cd"><h2>⏳ ${L('ফ্রিজ ও খোলা ওষুধের মেয়াদ','Fridge & medicine expiry watch')}</h2>
+    ${D.ex.length?D.ex.slice().sort((a,b)=>a.d.localeCompare(b.d)).map(x=>{
+      const df=diffD(x.d,today),bg=df<0?['b',L('মেয়াদ শেষ','Expired')]:df<=3?['w',df===0?L('আজ শেষ','Today'):N(df)+L(' দিন বাকি','d left')]:['g',N(df)+L(' দিন','d')];
+      return `<div class="li" style="cursor:default"><span class="e">${x.tp==='med'?'💊':'🧊'}</span><div style="flex:1"><b>${E(x.n)}</b><br><small>${x.d}</small></div><span class="bdg ${bg[0]}">${bg[1]}</span><button class="x" onclick="exDel('${x.id}')">🗑</button></div>`;
+    }).join(''):`<small>${L('কোনো আইটেম নেই — নিচ থেকে যোগ করুন','No items tracked yet — add below')}</small>`}
+    <div class="bzq" style="margin-top:8px"><input id="exn" class="f2" placeholder="${L('নাম (যেমন: নাপা সিরাপ / মাছ)','Item (e.g. Syrup / Fish)')}"><input id="exd" type="date" value="${addD(today,5)}"><button class="b o s" onclick="exAdd()">＋</button></div>
+  </div>`;
+}
+function ptSet(id,v){const p=D.pt.find(x=>x.id===id);if(!p)return;p.pct=v;if(v===100)p.rf=today;sv_();ktDraw()}
+function ptToBz(id){const p=D.pt.find(x=>x.id===id);if(!p)return;bzPut(today,p.n,0);sv_();ts(L('আজকের বাজারে যোগ হয়েছে ✓','Added to today\'s bazaar ✓'))}
+function ptAdd(){const n=$('ptn').value.trim();if(!n)return;D.pt.push({id:uid('pt'),e:'📦',n,pct:100,rf:today});sv_();ktDraw()}
+function ptDel(id){D.pt=D.pt.filter(x=>x.id!==id);sv_();ktDraw()}
+function mlEdit(k){
+  const lb=(DAYS7.find(x=>x[0]===k)||['',''])[1],m=D.ml[k]||{b:'',l:'',d:'',t:''};
+  sheet(`<h2>🍱 ${lb} — ${L('মেনু পরিকল্পনা','Meal plan')}</h2>
+    <small>🌅 ${L('সকালের নাস্তা','Breakfast')}</small><input id="mlb" value="${E(m.b)}">
+    <small>☀️ ${L('দুপুরের খাবার','Lunch')}</small><input id="mll" value="${E(m.l)}">
+    <small>🌙 ${L('রাতের খাবার','Dinner')}</small><input id="mld" value="${E(m.d)}">
+    <small>🎒 ${L('টিফিন / শিশুর খাবার (Ihan)','Tiffin / Toddler meal')}</small><input id="mlt" value="${E(m.t)}">
+    <div style="display:flex;gap:8px;margin-top:12px"><button class="b" style="flex:1" onclick="mlSave('${k}')">${L('সেভ','Save')}</button><button class="b o" onclick="sheetX()">${L('বাতিল','Cancel')}</button></div>`);
+}
+function mlSave(k){D.ml[k]={b:$('mlb').value.trim(),l:$('mll').value.trim(),d:$('mld').value.trim(),t:$('mlt').value.trim()};sv_();sheetX();ktDraw()}
+function exAdd(){const n=$('exn').value.trim(),d=$('exd').value;if(!n||!d)return;const tp=/সিরাপ|ওষুধ|syrup|drop|med/i.test(n)?'med':'food';D.ex.push({id:uid('ex'),n,d,tp});sv_();ktDraw()}
+function exDel(id){D.ex=D.ex.filter(x=>x.id!==id);sv_();ktDraw()}
+
+/* --- N15: HOUSEHOLD STAFF LEDGER, APPLIANCE/WARRANTY MAINTENANCE & PARCEL/COD TRACKER --- */
+function hmDraw(){
+  $('hm-hd').innerHTML=hd(L('বাসা, স্টাফ ও পার্সেল','Home, staff & parcels'),L('কাজের লোকের হিসাব, যন্ত্রপাতি সার্ভিসিং ও COD পার্সেল','Staff ledger, appliance servicing & COD deliveries'),'r');
+  const m=today.slice(0,7);
+  $('hm-b').innerHTML=`<div class="cd"><h2>🧑‍🍳 ${L('কাজের লোক, ড্রাইভার ও স্টাফ খাতা','Household staff & service ledger')}</h2>
+    ${D.stf.length?D.stf.map(s=>{
+      const paid=(s.pm||{})[m],net=Math.max((+s.sal||0)-(+s.adv||0),0);
+      return `<div class="mrow2" style="margin-bottom:8px">
+        <div class="r"><b>${E(s.n)} <small>(${E(s.rl||'')})</small></b><span class="bdg ${paid?'g':'w'}">${paid?L('পরিশোধিত','Paid'):L('বাকি ','Due ')+B(net)}</span></div>
+        <small>${L('মাসিক বেতন','Salary')}: ${B(s.sal)} · ${L('অগ্রিম','Advance')}: ${B(s.adv||0)} · ${L('ছুটি','Leave')}: ${N(s.lv||0)} ${L('দিন','days')}</small>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+          ${!paid?`<button class="b s" onclick="stfPay('${s.id}')">💸 ${L('বেতন দিন','Pay')} (${B(net)})</button>`:''}
+          <button class="b o s" onclick="stfAdv('${s.id}')">+ ${L('অগ্রিম','Advance')}</button>
+          <button class="b o s" onclick="stfLeave('${s.id}')">+ ${L('ছুটি','Leave')}</button>
+          <button class="x" onclick="stfDel('${s.id}')">🗑</button>
+        </div>
+      </div>`;
+    }).join(''):`<small>${L('কোনো স্টাফ যুক্ত নেই','No household staff added')}</small>`}
+    <button class="b o s" style="margin-top:8px" onclick="stfForm()">＋ ${L('নতুন স্টাফ যোগ করুন','Add staff member')}</button>
+  </div>
+  <div class="cd"><h2>🔧 ${L('যন্ত্রপাতি, ওয়ারেন্টি ও সার্ভিসিং','Appliances, warranty & servicing')}</h2>
+    ${D.ast.length?D.ast.map(a=>{
+      const df=a.nx?diffD(a.nx,today):999;
+      return `<div class="mrow2" style="margin-bottom:8px">
+        <div class="r"><b>${E(a.n)}</b>${a.nx?`<span class="bdg ${df<=7?'w':'g'}">${df<0?L('সার্ভিস দেরি','Overdue'):df===0?L('আজ সার্ভিস','Due today'):N(df)+L(' দিন পর','d')}</span>`:''}</div>
+        <small>${a.wr?L('ওয়ারেন্টি শেষ: ','Warranty till: ')+a.wr+' · ':''}${a.nx?L('পরবর্তী সার্ভিস: ','Next service: ')+a.nx:''}</small>
+        <div style="display:flex;gap:6px;margin-top:6px"><button class="b o s" onclick="astDone('${a.id}')">✓ ${L('সার্ভিস সম্পন্ন','Service done')}</button><button class="x" onclick="astDel('${a.id}')">🗑</button></div>
+      </div>`;
+    }).join(''):`<small>${L('এসি, ফিল্টার, ফ্রিজ বা বাইকের সার্ভিস রিমাইন্ডার রাখুন','Track AC, water filter, fridge or bike service intervals')}</small>`}
+    <button class="b o s" style="margin-top:8px" onclick="astForm()">＋ ${L('যন্ত্র / সার্ভিস যোগ করুন','Add appliance / service')}</button>
+  </div>
+  <div class="cd"><h2>📦 ${L('অনলাইন পার্সেল ও COD ট্র্যাকার','Parcel & COD delivery tracker')}</h2>
+    ${D.prc.length?D.prc.map(p=>`<div class="li" style="cursor:default"><span class="e">📦</span><div style="flex:1"><b>${E(p.n)}</b><br><small>${p.d?dn(p.d)+' · ':''}${p.cod>0?'COD '+B(p.cod):L('পেইড','Prepaid')}</small></div>${!p.dn?`<button class="b s" onclick="prcDeliv('${p.id}')">✓ ${L('রিসিভ','Received')}</button>`:`<span class="bdg g">✓</span>`}<button class="x" onclick="prcDel('${p.id}')">🗑</button></div>`).join(''):`<small>${L('আসন্ন পার্সেল ও ক্যাশ-অন-ডেলিভারি টাকা এখানে রাখুন','Track incoming parcels and COD cash needed at the door')}</small>`}
+    <div class="bzq" style="margin-top:8px"><input id="prcn" class="f2" placeholder="${L('পার্সেল (যেমন: দারাজ ডায়াপার)','Parcel item')}"><input id="prcc" type="number" placeholder="COD ৳"><button class="b o s" onclick="prcAdd()">＋</button></div>
+  </div>`;
+}
+function stfForm(){sheet(`<h2>🧑‍🍳 ${L('নতুন স্টাফ','New staff')}</h2><small>${L('নাম','Name')}</small><input id="sfn"><small>${L('পদবি (যেমন: সহকারী / ড্রাইভার)','Role')}</small><input id="sfr"><small>${L('মাসিক বেতন (৳)','Monthly salary (৳)')}</small><input id="sfs" type="number"><div style="display:flex;gap:8px;margin-top:12px"><button class="b" style="flex:1" onclick="stfSave()">${L('সেভ','Save')}</button><button class="b o" onclick="sheetX()">${L('বাতিল','Cancel')}</button></div>`)}
+function stfSave(){const n=$('sfn').value.trim(),sal=+$('sfs').value||0;if(!n)return;D.stf.push({id:uid('sf'),n,rl:$('sfr').value.trim(),sal,adv:0,lv:0,pm:{}});sv_();sheetX();hmDraw()}
+function stfPay(id){const s=D.stf.find(x=>x.id===id),m=today.slice(0,7);if(!s)return;const net=Math.max((+s.sal||0)-(+s.adv||0),0);s.pm=s.pm||{};s.pm[m]=today;s.adv=0;if(net>0)D.tx.push({id:Date.now(),d:today,k:'e',c:catId('সার্ভিস'),a:net,n:s.n+' ('+(s.rl||'Staff')+')'});sv_();hmDraw();ts(L('বেতন পরিশোধ ও খরচে যোগ হয়েছে ✓','Salary paid & logged ✓'))}
+function stfAdv(id){const s=D.stf.find(x=>x.id===id);if(!s)return;const v=+prompt(L('অগ্রিম টাকার পরিমাণ (৳)','Advance amount (৳)'));if(!(v>0))return;s.adv=(+s.adv||0)+v;D.tx.push({id:Date.now(),d:today,k:'e',c:catId('সার্ভিস'),a:v,n:s.n+' advance'});sv_();hmDraw()}
+function stfLeave(id){const s=D.stf.find(x=>x.id===id);if(!s)return;s.lv=(+s.lv||0)+1;sv_();hmDraw()}
+function stfDel(id){if(!confirm(L('মুছবেন?','Delete?')))return;D.stf=D.stf.filter(x=>x.id!==id);sv_();hmDraw()}
+function astForm(){sheet(`<h2>🔧 ${L('যন্ত্রপাতি ও সার্ভিস','Appliance & service')}</h2><small>${L('নাম (যেমন: এসি / ওয়াটার ফিল্টার)','Name')}</small><input id="asn"><small>${L('ওয়ারেন্টি শেষ তারিখ (ঐচ্ছিক)','Warranty expiry (optional)')}</small><input id="asw" type="date"><small>${L('পরবর্তী সার্ভিস তারিখ','Next service date')}</small><input id="asnx" type="date" value="${addD(today,90)}"><small>${L('সার্ভিস চক্র (দিন)','Interval (days)')}</small><input id="asiv" type="number" value="90"><div style="display:flex;gap:8px;margin-top:12px"><button class="b" style="flex:1" onclick="astSave()">${L('সেভ','Save')}</button><button class="b o" onclick="sheetX()">${L('বাতিল','Cancel')}</button></div>`)}
+function astSave(){const n=$('asn').value.trim();if(!n)return;D.ast.push({id:uid('as'),n,wr:$('asw').value,nx:$('asnx').value,iv:+$('asiv').value||90});sv_();sheetX();hmDraw()}
+function astDone(id){const a=D.ast.find(x=>x.id===id);if(!a)return;a.nx=addD(today,a.iv||90);sv_();hmDraw();ts(L('পরবর্তী সার্ভিস তারিখ আপডেট হয়েছে ✓','Next service date updated ✓'))}
+function astDel(id){D.ast=D.ast.filter(x=>x.id!==id);sv_();hmDraw()}
+function prcAdd(){const n=$('prcn').value.trim(),cod=+$('prcc').value||0;if(!n)return;D.prc.unshift({id:uid('pr'),n,cod,d:today,dn:0});sv_();hmDraw()}
+function prcDeliv(id){const p=D.prc.find(x=>x.id===id);if(!p)return;p.dn=1;if(p.cod>0)D.tx.push({id:Date.now(),d:today,k:'e',c:catId('বাজার'),a:p.cod,n:'COD: '+p.n});sv_();hmDraw();ts(L('পার্সেল রিসিভ সম্পন্ন ✓','Parcel received ✓'))}
+function prcDel(id){D.prc=D.prc.filter(x=>x.id!==id);sv_();hmDraw()}
+
+/* --- N16: FAMILY CARE, TODDLER LOG (IHAN), HEALTH VITALS & SOCIAL EVENTS --- */
+function fmDraw(){
+  $('fm-hd').innerHTML=hd(L('পরিবার, শিশু ও স্বাস্থ্য','Family, child & health'),L('জরুরি ICE কার্ড, শিশুর যত্ন, ওষুধ, ভাইটালস ও দাওয়াত','Emergency ICE card, child care, meds, vitals & events'),'r');
+  const kg=D.kid.gr||[],kv=D.kid.vx||[];
+  $('fm-b').innerHTML=`<div class="cd"><h2>🆘 ${L('জরুরি স্বাস্থ্য ও রক্তের গ্রুপ (ICE কার্ড)','Emergency ICE & blood group card')}</h2>
+    ${D.fam.map(m=>`<div class="ice">
+      <div class="r"><b>${E(m.n)} <small>(${E(m.rl||'')})</small></b><span class="bg">${E(m.bg||'O+')}</span></div>
+      <small>${m.al?L('অ্যালার্জি: ','Allergy: ')+E(m.al)+' · ':''}${m.dr?L('ডাক্তার: ','Doctor: ')+E(m.dr):''}</small>
+      <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+        ${m.ph?`<a class="b s" href="tel:${E(m.ph)}" style="text-decoration:none">📞 ${E(m.ph)}</a>`:''}
+        <button class="x" onclick="famDel('${m.id}')">🗑</button>
+      </div>
+    </div>`).join('')}
+    <button class="b o s" onclick="famForm()">＋ ${L('সদস্য যোগ করুন','Add family member')}</button>
+  </div>
+  <div class="cd"><h2>👶 ${L('শিশুর বৃদ্ধি ও টিকা (Ihan)','Toddler growth & vaccines (Ihan)')}</h2>
+    <div class="bzq"><input id="kgh" type="number" step="0.1" placeholder="${L('উচ্চতা (cm)','Height (cm)')}"><input id="kgw" type="number" step="0.1" placeholder="${L('ওজন (kg)','Weight (kg)')}"><button class="b s" onclick="kidGrAdd()">＋</button></div>
+    ${kg.length?`<div style="margin-top:8px">`+kg.slice(-4).reverse().map(g=>`<div class="r"><small>${g.d}</small><b>${g.h?N1(g.h)+' cm · ':''}${g.w?N1(g.w)+' kg':''}</b></div>`).join('')+`</div>`:''}
+    <h3 class="sh">${L('টিকার তালিকা','Vaccine checklist')}</h3>
+    ${kv.map((v,i)=>`<div class="li" style="cursor:default"><button class="ck" style="${v.dn?'background:var(--gn);border-color:var(--gn)':''}" onclick="kidVxTog(${i})">${v.dn?'✓':''}</button><div style="flex:1"><b>${E(v.n)}</b><br><small>${v.d||''}</small></div></div>`).join('')}
+  </div>
+  <div class="cd"><h2>💊 ${L('দৈনিক ওষুধের রুটিন','Daily medication schedule')}</h2>
+    ${D.med.length?D.med.map(md=>{
+      const tk=(md.tk||{})[today]||{};
+      return `<div class="mrow2" style="margin-bottom:8px"><div class="r"><b>💊 ${E(md.n)} <small>(${E(md.who||'')})</small></b><button class="x" onclick="medDel('${md.id}')">🗑</button></div>
+        <div style="margin-top:6px">${[['m',L('সকাল','Morning')],['n',L('দুপুর','Noon')],['e',L('রাত','Night')]].map(([k,lb])=>`<button class="medp${tk[k]?' on':''}" onclick="medTick('${md.id}','${k}')">${tk[k]?'✓ ':''}${lb}</button>`).join('')}</div>
+      </div>`;
+    }).join(''):`<small>${L('নিয়মিত ওষুধের রুটিন যোগ করুন','Add daily medication reminders')}</small>`}
+    <div class="bzq" style="margin-top:8px"><input id="medn" placeholder="${L('ওষুধের নাম','Medicine')}"><input id="medw" placeholder="${L('কার জন্য','For whom')}"><button class="b o s" onclick="medAdd()">＋</button></div>
+  </div>
+  <div class="cd"><h2>🩺 ${L('প্রেসার, সুগার ও ওজন লগ','Blood pressure, glucose & weight log')}</h2>
+    <div class="bzq"><input id="vtw" placeholder="${L('নাম','Member')}"><select id="vtk2"><option value="BP">BP (প্রেসার)</option><option value="Sugar">Sugar (সুগার)</option><option value="Weight">Weight (ওজন)</option></select><input id="vtv" placeholder="${L('মান (যেমন 120/80)','Value')}"><button class="b o s" onclick="vtLogAdd()">＋</button></div>
+    ${D.vtg.slice(0,6).map(v=>`<div class="r" style="margin-top:6px"><small>${v.d} · ${E(v.w)}</small><b>${E(v.k)}: ${E(v.v)}</b></div>`).join('')}
+  </div>
+  <div class="cd"><h2>🎁 ${L('দাওয়াত, অনুষ্ঠান ও উপহার খাতা','Social events, dawat & gift ledger')}</h2>
+    ${D.evt.length?D.evt.slice().sort((a,b)=>a.d.localeCompare(b.d)).map(ev=>`<div class="li" style="cursor:default"><span class="e">🎁</span><div style="flex:1"><b>${E(ev.n)}</b><br><small>${ev.d}${ev.gf?' · '+E(ev.gf):''}${ev.a>0?' · '+B(ev.a):''}</small></div>${!ev.dn&&ev.a>0?`<button class="b o s" onclick="evtPay('${ev.id}')">💸</button>`:''}<button class="x" onclick="evtDel('${ev.id}')">🗑</button></div>`).join(''):`<small>${L('বিবাহ, জন্মদিন বা দাওয়াতের উপহারের হিসাব রাখুন','Track weddings, birthdays & gift budgets')}</small>`}
+    <div class="bzq" style="margin-top:8px"><input id="evn" placeholder="${L('অনুষ্ঠান','Event')}"><input id="evd" type="date" value="${today}"><input id="eva" type="number" placeholder="৳"><button class="b o s" onclick="evtAdd()">＋</button></div>
+  </div>`;
+}
+function famForm(){sheet(`<h2>🆘 ${L('সদস্যের জরুরি তথ্য','Member emergency info')}</h2><small>${L('নাম','Name')}</small><input id="fmn"><small>${L('সম্পর্ক','Relation')}</small><input id="fmrl"><small>${L('রক্তের গ্রুপ','Blood group')}</small><input id="fmbg" value="O+"><small>${L('অ্যালার্জি / নোট','Allergy / note')}</small><input id="fmal"><small>${L('জরুরি ফোন','Emergency phone')}</small><input id="fmph" type="tel"><div style="display:flex;gap:8px;margin-top:12px"><button class="b" style="flex:1" onclick="famSave()">${L('সেভ','Save')}</button><button class="b o" onclick="sheetX()">${L('বাতিল','Cancel')}</button></div>`)}
+function famSave(){const n=$('fmn').value.trim();if(!n)return;D.fam.push({id:uid('fm'),n,rl:$('fmrl').value.trim(),bg:$('fmbg').value.trim(),al:$('fmal').value.trim(),ph:$('fmph').value.trim()});sv_();sheetX();fmDraw()}
+function famDel(id){D.fam=D.fam.filter(x=>x.id!==id);sv_();fmDraw()}
+function kidGrAdd(){const h=+$('kgh').value||0,w=+$('kgw').value||0;if(!h&&!w)return;D.kid.gr.push({d:today,h,w});sv_();fmDraw()}
+function kidVxTog(i){D.kid.vx[i].dn=D.kid.vx[i].dn?0:1;sv_();fmDraw()}
+function medAdd(){const n=$('medn').value.trim();if(!n)return;D.med.push({id:uid('md'),n,who:$('medw').value.trim(),tk:{}});sv_();fmDraw()}
+function medTick(id,k){const m=D.med.find(x=>x.id===id);if(!m)return;m.tk=m.tk||{};m.tk[today]=m.tk[today]||{};m.tk[today][k]=m.tk[today][k]?0:1;sv_();fmDraw()}
+function medDel(id){D.med=D.med.filter(x=>x.id!==id);sv_();fmDraw()}
+function vtLogAdd(){const w=$('vtw').value.trim()||'Self',k=$('vtk2').value,v=$('vtv').value.trim();if(!v)return;D.vtg.unshift({d:today,w,k,v});sv_();fmDraw()}
+function evtAdd(){const n=$('evn').value.trim(),d=$('evd').value||today,a=+$('eva').value||0;if(!n)return;D.evt.push({id:uid('ev'),n,d,a,dn:0});sv_();fmDraw()}
+function evtPay(id){const ev=D.evt.find(x=>x.id===id);if(!ev||ev.dn)return;ev.dn=1;D.tx.push({id:Date.now(),d:today,k:'e',c:catId('বিনোদন'),a:ev.a,n:'Gift: '+ev.n});sv_();fmDraw();ts(L('উপহার খরচে যোগ হয়েছে ✓','Gift logged as expense ✓'))}
+function evtDel(id){D.evt=D.evt.filter(x=>x.id!==id);sv_();fmDraw()}
+
+/* --- N17: 3-SECOND UNIVERSAL SMART CAPTURE & 60-SECOND EVENING REVIEW --- */
+function qcapRun(){
+  const inp=$('qcapi');if(!inp)return;
+  const raw=inp.value.trim();if(!raw)return;
+  const norm=bd2a(raw);
+  // 1. Explicit task prefix ("কাজ:" / "task" / "todo" / "call" / "কল")
+  if(/^(কাজ|task|todo|remind|কল|call)\s*[:\-]?\s*/i.test(norm)){
+    const title=raw.replace(/^(কাজ|task|todo|remind|কল|call)\s*[:\-]?\s*/i,'').trim();
+    if(title){D.td.unshift({id:uid('td'),n:title,ar:'home',d:today,top:0,dn:0});inp.value='';sv_();render();return ts(L('✅ কাজে যোগ হয়েছে: ','✅ Added to tasks: ')+title)}
+  }
+  // 2. Explicit bazaar prefix ("বাজার" / "buy" / "কিনব")
+  if(/^(বাজার|buy|কিনব|grocery)\s*[:\-]?\s*/i.test(norm)){
+    const rest=raw.replace(/^(বাজার|buy|কিনব|grocery)\s*[:\-]?\s*/i,'').trim();
+    const items=parseBz(rest);
+    if(items.length){items.forEach(x=>bzPutQ(today,x.n,x.a));inp.value='';sv_();render();return ts(L('🛒 বাজারে যোগ হয়েছে ✓','🛒 Added to bazaar ✓'))}
+  }
+  // 3. Number + text -> Expense or multi-item bazaar
+  const items=parseBz(raw);
+  if(items.length>1 && items.every(x=>x.a>0)){
+    items.forEach(x=>bzPutQ(today,x.n,x.a));inp.value='';sv_();render();
+    return ts(L(`🛒 ${N(items.length)}টি আইটেম বাজারে যোগ হয়েছে ✓`,`🛒 Added ${N(items.length)} items to bazaar ✓`));
+  }
+  const mNum=norm.match(/(\d+(?:\.\d+)?)/);
+  if(mNum){
+    const amt=+mNum[1],note=raw.replace(mNum[0],'').replace(/টাকা|taka|tk|৳/gi,'').trim()||L('দ্রুত খরচ','Quick expense');
+    const cGuess=/রিকশা|বাস|সিএনজি|uber|pathao|ভাড়া/i.test(note)?catId('যাতায়াত'):/বাজার|ডিম|চাল|সবজি|মাছ|মাংস|দুধ/i.test(note)?catId('বাজার'):/ওষুধ|ডাক্তার|মেডিকেল/i.test(note)?catId('চিকিৎসা'):/ইহান|ডায়াপার|শিশু/i.test(note)?catId('শিশু'):catId('বিনোদন');
+    const id=Date.now();
+    D.tx.push({id,d:today,k:'e',c:cGuess,a:amt,n:note,w:D.wl[0]?D.wl[0].id:''});
+    inp.value='';sv_();render();
+    return ts(`${note} ${B(amt)} ✓ — ${L('পূর্বাবস্থায় ফিরুন','Undo')}`,()=>{D.tx=D.tx.filter(t=>t.id!==id);sv_();render()});
+  }
+  // 4. Plain text without number -> Add to Today's Tasks
+  D.td.unshift({id:uid('td'),n:raw,ar:'home',d:today,top:0,dn:0});
+  inp.value='';sv_();render();
+  ts(L('✅ আজকের কাজে যোগ হয়েছে ✓','✅ Added to today\'s tasks ✓'));
+}
+
+function evReview(){
+  const r=calc(today.slice(0,7)),pl=pe();
+  const dim=new Date(T0.getFullYear(),T0.getMonth()+1,0).getDate(),dl=dim-T0.getDate()+1;
+  const safeDay=pl>0?Math.max(0,(pl-r.ex)/dl):0;
+  const tdSpent=D.tx.filter(x=>x.d===today&&x.k==='e').reduce((s,x)=>s+x.a,0);
+  const openTd=D.td.filter(x=>!x.dn),doneTd=D.td.filter(x=>x.dn);
+  const hbDone=D.hb.filter(h=>h.lg&&h.lg[today]).length;
+  const lowPt=D.pt.filter(p=>p.pct<=25);
+  sheet(`<h2>🌙 ${L('দিনের সারাংশ (Evening Check-in)','Evening check-in')}</h2>
+    <div class="bzs">
+      <div><small>${L('আজকের খরচ','Spent today')}</small><b style="color:${tdSpent>safeDay&&safeDay>0?'var(--rd)':'var(--pr)'}">${B(tdSpent)}</b></div>
+      <div><small>${L('দৈনিক নিরাপদ সীমা','Daily safe limit')}</small><b>${B(safeDay)}</b></div>
+      <div><small>${L('অভ্যাস সম্পন্ন','Habits done')}</small><b>${N(hbDone)}/${N(D.hb.length)}</b></div>
+    </div>
+    <div class="r" style="margin-top:10px"><span>✅ ${L('সম্পন্ন কাজ','Tasks done')}</span><b>${N(doneTd.length)}</b></div>
+    <div class="r"><span>⏳ ${L('বাকি কাজ','Pending tasks')}</span><b>${N(openTd.length)}</b></div>
+    ${lowPt.length?`<div class="tp w" style="margin-top:8px">🥫 ${L('প্যান্ট্রিতে কম আছে: ','Low in pantry: ')}${lowPt.map(p=>E(p.n)).join(', ')}</div>`:''}
+    ${openTd[0]?`<div class="tp i" style="margin-top:8px">⭐ ${L('আগামীকালের প্রথম কাজ: ','Next priority: ')}<b>${E(openTd[0].n)}</b></div>`:''}
+    <button class="b" style="width:100%;margin-top:12px" onclick="sheetX()">${L('শুভ রাত্রি ✓','Done for today ✓')}</button>`);
+}
+
+function lifeH(){
+  const e=$('lfh');if(!e)return;
+  const openTd=D.td.filter(x=>!x.dn).length;
+  const hbDone=D.hb.filter(h=>h.lg&&h.lg[today]).length;
+  const lowPt=D.pt.filter(p=>p.pct<=25).length;
+  e.innerHTML=`<div class="r"><h2 style="margin:0">🧭 ${L('আজকের জীবন ও রুটিন','Today\'s life & routine')}</h2><button class="b o s" onclick="evReview()">🌙 ${L('রাতের চেক-ইন','Evening')}</button></div>
+    <div class="lgrid">
+      <div class="lbox" onclick="go('td')"><small>✅ ${L('বাকি কাজ','Tasks')}</small><b>${N(openTd)}</b></div>
+      <div class="lbox" onclick="go('td')"><small>🔥 ${L('অভ্যাস','Habits')}</small><b>${N(hbDone)}/${N(D.hb.length)}</b></div>
+      <div class="lbox" onclick="go('kt')"><small>🥫 ${L('প্যান্ট্রি কম','Low stock')}</small><b style="color:${lowPt?'var(--am)':'var(--pr)'}">${N(lowPt)}</b></div>
+    </div>`;
+}
+
+/* --- N18: WIRING, HUB EXTENSIONS, ALERTS, CALENDAR & EXCEL INTEGRATION --- */
+{const _f2=fix;fix=function(){
+  _f2();
+  D.wl=D.wl||[
+    {id:'w1',n:L('নগদ ক্যাশ','Cash'),tp:'cash',e:'💵',b0:0},
+    {id:'w2',n:L('বিকাশ','bKash'),tp:'mfs',e:'📱',b0:0},
+    {id:'w3',n:L('নগদ','Nagad'),tp:'mfs',e:'📱',b0:0},
+    {id:'w4',n:L('ব্যাংক','Bank'),tp:'bank',e:'🏦',b0:0}
+  ];
+  D.wtr=D.wtr||[];
+  D.td=D.td||[];
+  D.hb=D.hb||[
+    {id:'hb1',e:'💧',n:L('৮ গ্লাস পানি','8 glasses of water'),lg:{}},
+    {id:'hb2',e:'🚶',n:L('৩০ মিনিট হাঁটা / ব্যায়াম','30-min walk / workout'),lg:{}},
+    {id:'hb3',e:'📖',n:L('ইহানকে গল্প শোনানো','Bedtime story for Ihan'),lg:{}}
+  ];
+  D.pt=D.pt||[
+    {id:'pt1',e:'🌾',n:L('চাল (Rice)','Rice'),pct:80,rf:today},
+    {id:'pt2',e:'🫒',n:L('সয়াবিন তেল (Oil)','Cooking oil'),pct:70,rf:today},
+    {id:'pt3',e:'🍼',n:L('ডায়াপার ও দুধ','Diapers & milk'),pct:65,rf:today},
+    {id:'pt4',e:'🔥',n:L('গ্যাস সিলিন্ডার','LPG cylinder'),pct:75,rf:today}
+  ];
+  D.ml=D.ml||{};
+  D.ex=D.ex||[];
+  D.stf=D.stf||[];
+  D.ast=D.ast||[];
+  D.prc=D.prc||[];
+  D.fam=D.fam||[{id:'fm1',n:'Naimur Rahman Ferdous',rl:'Self',bg:'O+',al:'',dr:'',ph:''},{id:'fm2',n:'Ihan',rl:'Son',bg:'O+',al:'',dr:'',ph:''}];
+  D.kid=D.kid||{gr:[],vx:[
+    {n:'BCG + OPV-0 (Birth)',d:'',dn:1},
+    {n:'Penta + PCV + OPV (6/10/14w)',d:'',dn:1},
+    {n:'MR-1 (9 Months)',d:'',dn:1},
+    {n:'MR-2 (15 Months)',d:'',dn:1},
+    {n:'Typhoid / Flu Booster',d:'',dn:0}
+  ]};
+  D.med=D.med||[];
+  D.vtg=D.vtg||[];
+  D.evt=D.evt||[];
+}}
+
+// Extend Transaction Modal with Wallet selector (#fw)
+{const _op2=op;op=function(k,id,c){
+  _op2(k,id,c);
+  const wsel=$('fw');if(!wsel||!D.wl)return;
+  const x=id?D.tx.find(t=>t.id===id):null;
+  wsel.innerHTML=`<option value="">💳 ${L('ওয়ালেট (ঐচ্ছিক)','Wallet (optional)')}</option>`+D.wl.map(w=>`<option value="${w.id}"${x&&x.w===w.id?' selected':''}>${w.e||'💳'} ${E(w.n)} (${B(wlBal(w))})</option>`).join('');
+}}
+{const _sv2=sv;sv=async function(){
+  const wv=$('fw')?$('fw').value:'';
+  const was=F.id;
+  await _sv2();
+  if($('dg').open)return;
+  const tx=was?D.tx.find(t=>t.id===was):D.tx[D.tx.length-1];
+  if(tx){if(wv)tx.w=wv;else delete tx.w;sv_();if(TAB==='h')wlStrip()}
+}}
+
+// Extend Home Render with Wallet Strip & Life Command Card
+{const _rh2=rH;rH=function(){_rh2();wlStrip();lifeH()}}
+
+// Extend More Hub (hubDraw) with all Daily Life Master OS screens
+{const _hub2=hubDraw;hubDraw=function(){
+  _hub2();
+  const b=$('r-b');if(!b)return;
+  const lifeGrp=`<h3 class="sh">${L('দৈনিক জীবন ও পরিবার OS','Daily life & family OS')}</h3><div class="mg">`+[
+    ['💳',L('ওয়ালেট ও অ্যাকাউন্ট','Wallets & accounts'),L('নগদ, বিকাশ, নগদ, ব্যাংক ও ট্রান্সফার','Cash, bKash, Nagad, Bank & transfers'),"go('wl')"],
+    ['✅',L('দৈনিক কাজ, অভ্যাস ও ফোকাস','Tasks, habits & focus'),L('সেরা ৩ কাজ, এলাকাভিত্তিক রুট ও পমোডোরো','Top-3 priorities, route errands & Pomodoro'),"go('td')"],
+    ['🥫',L('প্যান্ট্রি, মেনু ও মেয়াদ','Pantry, meals & expiry'),L('স্টক রাডার, সাপ্তাহিক টিফিন ও মেয়াদ সতর্কতা','Staple radar, weekly meals & expiry watch'),"go('kt')"],
+    ['🏠',L('বাসা, স্টাফ ও পার্সেল','Home, staff & parcels'),L('কাজের লোকের বেতন, সার্ভিসিং ও COD পার্সেল','Staff salary, appliance servicing & COD'),"go('hm')"],
+    ['👪',L('পরিবার, শিশু ও স্বাস্থ্য','Family, child & health'),L('জরুরি ICE কার্ড, ইহানের বৃদ্ধি/টিকা, ওষুধ ও দাওয়াত','ICE card, child growth/vaccines, meds & events'),"go('fm')"]
+  ].map(mrow).join('')+`</div>`;
+  b.insertAdjacentHTML('afterbegin',lifeGrp);
+}}
+
+// Extend Alerts with Life OS reminders
+{const _al2=alerts;alerts=function(){
+  const A=_al2();
+  D.pt.filter(p=>p.pct<=20).forEach(p=>A.push({id:'pt'+p.id,lvl:'w',k:'pantry',msg:L(`প্যান্ট্রিতে ${p.n} শেষ প্রায় (${N(p.pct)}%)`,`${p.n} is running low (${N(p.pct)}%)`),go:"go('kt')",gl:L('দেখুন','View')}));
+  D.ex.forEach(x=>{const df=diffD(x.d,today);if(df<=3)A.push({id:'ex'+x.id,lvl:df<0?'b':'w',k:'exp',msg:L(`${x.n}-এর মেয়াদ ${df<0?'শেষ হয়ে গেছে':df===0?'আজ শেষ':N(df)+' দিনে শেষ'}`,`${x.n} ${df<0?'has expired':df===0?'expires today':'expires in '+N(df)+'d'}`),go:"go('kt')",gl:L('দেখুন','View')})});
+  D.prc.filter(p=>!p.dn&&p.cod>0).forEach(p=>A.push({id:'pr'+p.id,lvl:'i',k:'cod',msg:L(`COD পার্সেল: ${p.n} (${B(p.cod)} প্রস্তুত রাখুন)`,`COD parcel: ${p.n} (keep ${B(p.cod)} ready)`),go:"go('hm')",gl:L('দেখুন','View')}));
+  D.ast.forEach(a=>{if(a.nx){const df=diffD(a.nx,today);if(df<=7)A.push({id:'as'+a.id,lvl:df<0?'b':'w',k:'ast',msg:L(`${a.n} সার্ভিসিং ${df<0?'দেরি হয়েছে':N(df)+' দিন পর'}`,`${a.n} servicing ${df<0?'overdue':'in '+N(df)+'d'}`),go:"go('hm')",gl:L('দেখুন','View')})}});
+  D.evt.filter(e=>!e.dn).forEach(ev=>{const df=diffD(ev.d,today);if(df>=0&&df<=3)A.push({id:'ev'+ev.id,lvl:'i',k:'evt',msg:L(`আসন্ন অনুষ্ঠান: ${ev.n} (${df===0?'আজ':N(df)+' দিন পর'})`,`Upcoming event: ${ev.n} (${df===0?'today':'in '+N(df)+'d'})`),go:"go('fm')",gl:L('দেখুন','View')})});
+  return A;
+}}
+
+// Extend Calendar day summary with Daily Tasks & Family Events
+{const _cal2=calDraw;calDraw=function(){
+  _cal2();
+  const cs=$('cs');if(!cs||!CK)return;
+  const tds=D.td.filter(t=>t.d===CK);
+  const evs=D.evt.filter(e=>e.d===CK);
+  let extra='';
+  if(tds.length)extra+=`<h3 class="sh">✅ ${L('দিনের কাজ','Tasks on this day')}</h3>`+tds.map(t=>`<div class="li" onclick="go('td')"><span class="e">${t.dn?'✅':'⬜'}</span><div><b>${E(t.n)}</b></div></div>`).join('');
+  if(evs.length)extra+=`<h3 class="sh">🎁 ${L('অনুষ্ঠান ও দাওয়াত','Events & gifts')}</h3>`+evs.map(ev=>`<div class="li" onclick="go('fm')"><span class="e">🎁</span><div><b>${E(ev.n)}</b>${ev.a>0?' · '+B(ev.a):''}</div></div>`).join('');
+  if(extra)cs.insertAdjacentHTML('beforeend',extra);
+}}
+
+// Extend Excel Workbook Export (xbuild) with v2.0.0 tabs
+{const _xb2=xbuild;xbuild=function(){
+  // Temporarily attach summary sheets via D.sheets clone or extend xbuild cleanly
+  const origSheets=D.sheets;
+  const extra=[];
+  if(D.wl&&D.wl.length)extra.push({n:'Wallets',rows:D.wl.map(w=>({k:1,n:w.n,a:wlBal(w)}))});
+  if(D.td&&D.td.length)extra.push({n:'Daily Tasks',rows:D.td.map(t=>({k:!!t.dn,n:t.n+' ('+t.d+')',a:0}))});
+  if(D.pt&&D.pt.length)extra.push({n:'Pantry Stock',rows:D.pt.map(p=>({k:p.pct>25,n:p.n+' ('+p.pct+'%)',a:0}))});
+  if(D.stf&&D.stf.length)extra.push({n:'Staff Ledger',rows:D.stf.map(s=>({k:1,n:s.n+' - '+(s.rl||''),a:s.sal}))});
+  D.sheets=[...(origSheets||[]),...extra];
+  const res=_xb2();
+  D.sheets=origSheets;
+  return res;
+}}
+
+Object.assign(RM,{wl:wlDraw,td:tdDraw,kt:ktDraw,hm:hmDraw,fm:fmDraw});
 
 
 /* custom duotone icons */
