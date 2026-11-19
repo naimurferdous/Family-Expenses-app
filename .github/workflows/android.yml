@@ -140,6 +140,10 @@ jobs:
         with:
           name: family-budget-apk
           path: FamilyExpenses.apk
+      - name: Warn when no release can be published
+        if: env.SIGNED != 'release'
+        run: |
+          echo "::warning title=No update published::KEYSTORE_BASE64 / KEYSTORE_PASSWORD / KEY_ALIAS / KEY_PASSWORD secrets are missing, so this debug-signed build is NOT published as a Release and in-app updates will find nothing."
       - name: Publish a GitHub Release (only for a new version, signed builds only)
         if: env.SIGNED == 'release'
         env:
@@ -148,7 +152,8 @@ jobs:
           VERSION=$(node -p "require('./package.json').version")
           TAG="v$VERSION"
           if gh release view "$TAG" >/dev/null 2>&1; then
-            echo "Release $TAG already exists - bump the version in package.json to publish an update."
+            echo "::warning title=No update published::Release $TAG already exists, so the installed apps will NOT see an update. Bump the version in package.json (e.g. 2.1.0 -> 2.1.1) and run again."
+            echo "### No update published - release $TAG already exists. Bump the version in package.json." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
           cp FamilyExpenses.apk "FamilyExpenses-$TAG.apk"
