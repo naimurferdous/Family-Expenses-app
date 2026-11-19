@@ -1,16 +1,17 @@
-What's new in 2.1.0 / ২.১.০-এ নতুন কী — Daily Life & Household Master OS
+What's new in 2.1.0 / ২.১.০-এ নতুন কী
 
-- Fixed In-App Update Checker: detects both new semantic versions and new GitHub Actions build numbers (#build), falls back to recent releases automatically, and allows direct repo configuration.
-  ইন-অ্যাপ আপডেট চেকার ফিক্স: নতুন ভার্সন ও নতুন বিল্ড নম্বর (#build) উভয়ই শনাক্ত করে এবং স্বয়ংক্রিয়ভাবে সর্বশেষ রিলিজ খুঁজে বের করে।
-- Dedicated Relevant Categories in More (আরও): added clear individual shortcuts for Multi-Wallet Hub, Daily Planner, Habit Tracker, Focus Timer, Warranty & Servicing Tracker, Parcel & COD Tracker, and Family, Baby & Health with smooth section deep-linking.
-  "আরও" মেনুতে আলাদা ক্যাটাগরি ও অপশন: মাল্টি-ওয়ালেট হাব, ডেইলি প্ল্যানার, হ্যাবিট ট্র্যাকার, ফোকাস টাইমার, ওয়ারেন্টি ও সার্ভিসিং ট্র্যাকার, পার্সেল ও COD ট্র্যাকার এবং পরিবার, শিশু ও স্বাস্থ্য আলাদাভাবে যুক্ত।
-- Native Android Push Notifications for Life OS: scheduled phone alerts for daily medicines, fridge/medicine expiries, appliance servicing, social events, doctor follow-ups, and Pomodoro focus timer completion.
-  লাইফ OS-এর নেটিভ পুশ নোটিফিকেশন: দৈনিক ওষুধ, মেয়াদ শেষ, সার্ভিসিং, দাওয়াত, ডাক্তার ফলো-আপ ও পমোডোরো টাইমার অ্যালার্ম।
-- Visual Charts for Wallets, Baby Growth & Health Vitals: added Chart.js graphs for Wallet Balances, Baby Height/Weight Growth Curve (Ihan), and BP/Glucose/Weight trends.
-  ওয়ালেট, শিশুর বৃদ্ধি ও স্বাস্থ্য ভাইটালস চার্ট: ওয়ালেট ব্যালেন্স, ইহানের উচ্চতা/ওজন গ্রোথ কার্ভ এবং প্রেসার/সুগার ট্রেন্ড গ্রাফ।
-- Extended Monthly Printable Report: HTML monthly reports now include Wallet Closing Balances, Staff Salary Status, Loan Book Summary, and Tasks/Focus metrics.
-  বর্ধিত মাসিক প্রিন্টেবল রিপোর্ট: ওয়ালেট ব্যালেন্স, স্টাফ বেতন, ধার খাতা ও টাস্ক/ফোকাস সারাংশ যুক্ত।
-- Doctor Visit & Prescription Log: save doctor consultations, follow-up dates, visit fees, and attached prescription/report photos offline.
-  ডাক্তার ভিজিট ও প্রেসক্রিপশন লগ: ডাক্তারের পরামর্শ, ফলো-আপ তারিখ, ফি ও প্রেসক্রিপশনের ছবি সংরক্ষণ।
-- One-Tap WhatsApp / Messenger Checklist Share & Copy: formatted checklist sharing for Bazaar lists, Daily Tasks/Errands, and Family Emergency ICE cards.
-  WhatsApp ও মেসেঞ্জারে চেকলিস্ট শেয়ার ও কপি: বাজার তালিকা, দৈনিক কাজ ও জরুরি ICE কার্ড এক ট্যাপে শেয়ার।
+Fixes / ফিক্স
+- App update check: 4-part versions (2.0.0.1) now compare correctly, the app also checks when it comes back to the front, and the build now warns when no release is published (version not bumped or signing secrets missing).
+  আপডেট চেক ঠিক করা হয়েছে (৪-অংশের ভার্সন, অ্যাপ সামনে এলে চেক, রিলিজ না হলে Actions-এ warning)।
+- The More menu "Daily life & family hub", the Home wallet strip and the calendar extras were not showing - fixed.
+  "আরও" মেনুর হাব, হোমের ওয়ালেট স্ট্রিপ ও ক্যালেন্ডার এক্সট্রা দেখাচ্ছিল না - ঠিক।
+- Wallet transfer fee was deducted twice; deleting a transfer now removes its fee expense too.
+- Focus timer now keeps running with the screen off and rings even outside the app.
+
+New / নতুন
+- More > Daily life & family hub: separate rows for Multi-wallet hub, Daily planner, Habits, Focus timer, Warranty & servicing, Parcel & COD, Family/baby/health, Doctor visits, Medicines & vitals.
+- Doctor visit & prescription tracker with follow-up dates and prescription/report photos.
+- Charts: baby growth curve (with approximate WHO reference band), BP/sugar 30/90-day trend, wallet balance flow.
+- Monthly report now includes wallet closing balances, staff salary status and outstanding loans.
+- One-tap Copy / WhatsApp / Messenger share cards for the bazaar list and tasks by area.
+- Native reminders: medicine times (morning/noon/night), expiry, appliance servicing, events, doctor follow-ups.
