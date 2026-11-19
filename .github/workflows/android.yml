@@ -87,10 +87,13 @@ jobs:
           f = glob.glob("android/app/src/main/java/**/MainActivity.java", recursive=True)[0]
           j = open(f, encoding="utf8").read()
           pkg = re.search(r"^package\s+([\w.]+);", j, re.M).group(1)
-          reg = "registerPlugin(ApkInstallerPlugin.class); " if inapp else ""
+          reg = ("registerPlugin(ApkInstallerPlugin.class); " if inapp else "") + "registerPlugin(GoogleDriveAuthPlugin.class); "
           j = re.sub(r"class MainActivity extends BridgeActivity\s*\{\s*\}", "class MainActivity extends BridgeActivity {\n  @Override public void onCreate(android.os.Bundle b) { " + reg + "super.onCreate(b); getWindow().setFlags(android.view.WindowManager.LayoutParams.FLAG_SECURE, android.view.WindowManager.LayoutParams.FLAG_SECURE); }\n}", j)
           assert "FLAG_SECURE" in j
           open(f, "w", encoding="utf8").write(j)
+          gs = open("native/GoogleDriveAuthPlugin.java", encoding="utf8").read()
+          gs = re.sub(r"^package\s+[\w.]+;", "package " + pkg + ";", gs, count=1, flags=re.M)
+          open(os.path.join(os.path.dirname(f), "GoogleDriveAuthPlugin.java"), "w", encoding="utf8").write(gs)
           if inapp:
               src = open("native/ApkInstallerPlugin.java", encoding="utf8").read()
               src = re.sub(r"^package\s+[\w.]+;", "package " + pkg + ";", src, count=1, flags=re.M)
@@ -103,7 +106,8 @@ jobs:
               assert "FileProvider" in s
           g = "android/app/build.gradle"
           b = open(g, encoding="utf8").read()
-          assert "buildTypes {" in b and "android {" in b
+          assert "buildTypes {" in b and "android {" in b and "dependencies {" in b
+          b = b.replace("dependencies {", "dependencies {\n    implementation 'com.google.android.gms:play-services-auth:21.2.0'", 1)
           b = b.replace("android {", "android {\n    lint {\n        checkReleaseBuilds false\n        abortOnError false\n    }", 1)
           b = b.replace("buildTypes {", "buildTypes {\n        debug { debuggable false }", 1)
           if os.environ.get("SIGNED") == "release":
