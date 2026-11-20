@@ -1,6 +1,6 @@
 {
   "name": "family-budget",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": true,
   "dependencies": {
     "@capacitor/android": "^6.2.0",
@@ -10,6 +10,7 @@
     "chart.js": "4.4.1",
     "@capacitor/local-notifications": "^6.0.0",
     "@capacitor/share": "^6.0.0",
-    "@capgo/capacitor-native-biometric": "^6.0.0"
+    "@capgo/capacitor-native-biometric": "^6.0.0",
+    "@capacitor/app": "^6.0.0"
   }
 }
