@@ -156,7 +156,7 @@ jobs:
           APKSIGNER=$(ls "$ANDROID_HOME"/build-tools/*/apksigner | sort -V | tail -1)
           "$APKSIGNER" verify --verbose --print-certs FamilyExpenses.apk | tee sig.txt
           grep -i "SHA-256 digest" sig.txt | head -1
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: family-budget-apk
           path: FamilyExpenses.apk
