@@ -1,3 +1,9 @@
+# Family Expenses v2.5.4
+
+- Corrected npm override versions after CI reported `ETARGET` for unavailable `rimraf@6.0.2`.
+- Set `rimraf` override to published `6.1.4` and `tar` override to `7.5.22`.
+- Retains the existing CI audit policy and source checks.
+
 # Family Expenses v2.5.3 — CI Upload and Audit Workflow Fix
 
 - Added a repository completeness preflight so missing nested scripts/tests are reported clearly.
