@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const html=fs.readFileSync(new URL('../www/index.html',import.meta.url),'utf8');
+const line=html.split('\n').find(x=>x.startsWith('function lfSun('));
+assert.ok(line,'lfSun calculator found in app');
+const fn=new Function(`${line}; return lfSun;`)();
+const got=fn('2026-11-20',23.8103,90.4125,6);
+const minute=x=>Math.floor(x);
+const reference={fajr:297,sunrise:376,noon:704,asr:936,sunset:1032,isha:1110};
+for(const [k,v] of Object.entries(reference))assert.ok(Math.abs(minute(got[k])-v)<=1,`${k}: got ${minute(got[k])}, expected ${v} ±1m`);
+console.log('Prayer calculator reference check (Karachi 18°, Hanafi Asr, Dhaka): OK within 1 minute of online reference table.');

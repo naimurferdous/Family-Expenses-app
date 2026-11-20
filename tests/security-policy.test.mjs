@@ -1,1 +1,19 @@
-
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const html=fs.readFileSync('www/index.html','utf8');
+const workflow=fs.readFileSync('.github/workflows/android.yml','utf8');
+assert.match(html,/AES-GCM/,'AES-GCM should be used');
+assert.match(html,/if\(g\.np\)throw new Error\('unencrypted'\)/,'Unencrypted legacy cloud auto-backup is blocked');
+assert.match(html,/iterations:400000/,'New asset vault should use 400k PBKDF2');
+assert.match(html,/fe_assets_fail/,'Asset vault failed attempts tracked');
+assert.match(html,/fe_assets_wait/,'Asset vault lockout implemented');
+assert.match(html,/async function avChangePass\(\)/,'Asset vault passphrase rotation exists');
+assert.match(html,/A 12\+ character password is required to encrypt cloud backups/,'Cloud backup encryption passphrase required');
+assert.match(html,/if\(!pw\|\|pw\.length<12\)/,'Cloud backup passphrase is required and length checked');
+assert.match(html,/Use a passphrase of at least 12 characters/,'Document vault passphrase length');
+assert.match(html,/কমপক্ষে ১২ অক্ষরের শক্তিশালী পাসওয়ার্ড/,'Main encryption passphrase length');
+assert.match(workflow,/allowBackup="false"/,'Android backup must be disabled');
+assert.match(workflow,/FLAG_SECURE/,'Screen capture protection must be present');
+assert.match(workflow,/usesCleartextTraffic="false"/,'Cleartext HTTP must be disabled');
+if(fs.existsSync('debug.keystore')) throw new Error('Repository must not include a debug keystore');
+console.log('Security policy checks passed');

@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const html=fs.readFileSync(new URL('../www/index.html',import.meta.url),'utf8');
+const line=html.split('\n').find(x=>x.startsWith('function remParse(raw)'));
+assert.ok(line,'offline reminder parser found');
+const pad=n=>String(n).padStart(2,'0');
+const add=(d,m)=>{const x=new Date(d+'T00:00:00');x.setMinutes(x.getMinutes()+m);return `${x.getFullYear()}-${pad(x.getMonth()+1)}-${pad(x.getDate())}`};
+const fn=new Function('today','lfAddM','pad','lfMinutes',`${line}; return remParse;`)('2026-11-20',add,pad,s=>{const [h,m]=s.split(':').map(Number);return h*60+m});
+const result=fn('Remind me to call the plumber Saturday at 5pm');
+assert.equal(result.n,'call the plumber');assert.equal(result.d,'2026-11-21');assert.equal(result.t,'17:00');
+const tomorrow=fn('Remind me to pay the bill tomorrow');assert.equal(tomorrow.d,'2026-11-21');
+console.log('Offline reminder parser examples: OK');
