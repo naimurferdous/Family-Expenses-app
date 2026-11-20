@@ -45,6 +45,8 @@ jobs:
           node --check /tmp/family-app-inline.js
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+      - name: Patch Capacitor CLI tar v7 compatibility
+        run: node scripts/patch-capacitor-tar-compat.mjs
       - name: Production dependency vulnerability audit (blocking)
         run: npm audit --omit=dev --audit-level=high
       - name: Full dependency vulnerability audit (informational)
@@ -57,6 +59,7 @@ jobs:
       - name: Repository security checks
         run: |
           node tests/security-policy.test.mjs
+          node tests/capacitor-tar-compat.test.mjs
           test ! -f debug.keystore
           test ! -f signing-secrets.txt
       - run: cp node_modules/chart.js/dist/chart.umd.js www/chart.umd.js
