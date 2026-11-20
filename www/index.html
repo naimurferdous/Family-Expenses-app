@@ -31,8 +31,8 @@ section{padding:0 18px}section:not(.hide){animation:sc .6s cubic-bezier(.2,.8,.2
 .hc2{position:relative;background:var(--cd);color:var(--tx);border-radius:24px;padding:16px 18px;margin:14px 0 -52px;box-shadow:0 16px 34px rgb(var(--shr)/0.2)}.hc2 small{font-weight:600}.big{font-size:32px;font-weight:700;line-height:1.2;margin:2px 0}#hs{font-size:12.5px;color:var(--mu)}
 .sh{font-size:15px;font-weight:700;margin:20px 0 10px}
 .cards,.ctg{display:flex;gap:12px;overflow-x:auto;margin:0 -18px;padding:4px 18px 12px;scroll-snap-type:x mandatory;scroll-padding-inline:18px;scrollbar-width:none}
-.cards span{flex:0 0 47%;height:128px;border-radius:26px;background:var(--cr);position:relative;overflow:hidden;padding:16px;scroll-snap-align:start}.cards small{display:block;font-weight:600}.cards b{display:block;font-size:17px;margin-top:2px}
-.cards span::before{content:"";position:absolute;left:-24px;bottom:-24px;width:92px;height:92px;border-radius:50%;background:var(--sel)}.cards span::after{content:"";position:absolute;left:42px;bottom:16px;width:34px;height:34px;border-radius:50%;background:var(--pr);box-shadow:50px -12px 0 -8px var(--am)}
+.cards span{flex:0 0 31%;height:66px;border-radius:18px;background:var(--cr);position:relative;overflow:hidden;padding:9px 11px;scroll-snap-align:start}.cards small{display:block;font-weight:600;font-size:11px}.cards b{display:block;font-size:14px;margin-top:0}
+.cards span::before{content:"";position:absolute;left:-16px;bottom:-16px;width:46px;height:46px;border-radius:50%;background:var(--sel)}.cards span::after{content:"";position:absolute;left:42px;bottom:16px;width:34px;height:34px;border-radius:50%;background:var(--pr);box-shadow:50px -12px 0 -8px var(--am)}
 .cards span:nth-child(2)::before{left:auto;right:-30px;bottom:-30px;border-radius:50% 0 0 0}.cards span:nth-child(3)::after{background:var(--am);box-shadow:50px -12px 0 -8px var(--pr)}
 .ti{flex:0 0 auto;background:none;border:0;padding:0;font:inherit;font-size:11px;color:var(--tx);text-align:center;cursor:pointer;width:64px;position:relative}.ti i{display:grid;place-items:center;width:56px;height:56px;margin:0 auto 6px;border-radius:18px;background:var(--cr);font-size:24px;font-style:normal;transition:.35s cubic-bezier(.3,1.5,.5,1)}
 .ti.on i{background:var(--sel);transform:scale(1.1);box-shadow:0 12px 22px rgb(var(--selr)/0.33)}.ti.on::after{content:"";display:block;width:4px;height:4px;border-radius:50%;background:var(--pr);margin:3px auto 0}
@@ -97,7 +97,7 @@ details.cd summary{cursor:pointer;font-weight:700}details[open] summary{margin-b
 :root[data-pal=sand]{--bg:#f1e6dc;--bg2:#e7d6c8;--cd:#ffffff;--tx:#3a2f2c;--mu:#9a8b84;--bd:#f0e5dd;--pr:#d9825b;--rd:#c4473f;--am:#e6b476;--bl:#4a3b3a;--in:#faf3ec;--gn:#4f9a78;--cr:#f7e9dc;--sel:#4a3b3a;--tk:#eadfd7;--ic:#4a3b3a;--h1:#e49a73;--h2:#c9714a;--h3:#f3c8ad;--h4:#efbb9c;--shr:122 74 48;--prr:217 130 91;--selr:74 59 58}@media(prefers-color-scheme:dark){:root[data-pal=sand]:not([data-theme=light]){--bg:#2b211d;--bg2:#211915;--cd:#382b26;--tx:#f6ebe4;--mu:#b9a69c;--bd:#4a3a33;--pr:#f09a74;--rd:#ff7b6e;--am:#efc07f;--bl:#f6ebe4;--in:#43342e;--gn:#6fcaa0;--cr:#4a3a33;--sel:#17100d;--tk:#4f3f38;--ic:#f6ebe4;--h1:#c9714a;--h2:#9e4f30;--h3:#d98f6a;--h4:#cf8260;--shr:122 74 48;--prr:240 154 116;--selr:23 16 13}}:root[data-pal=sand][data-theme=dark]{--bg:#2b211d;--bg2:#211915;--cd:#382b26;--tx:#f6ebe4;--mu:#b9a69c;--bd:#4a3a33;--pr:#f09a74;--rd:#ff7b6e;--am:#efc07f;--bl:#f6ebe4;--in:#43342e;--gn:#6fcaa0;--cr:#4a3a33;--sel:#17100d;--tk:#4f3f38;--ic:#f6ebe4;--h1:#c9714a;--h2:#9e4f30;--h3:#d98f6a;--h4:#cf8260;--shr:122 74 48;--prr:240 154 116;--selr:23 16 13}
 :root[data-pal=berry]{--bg:#f3e7ee;--bg2:#e8d4e0;--cd:#ffffff;--tx:#33202d;--mu:#94808e;--bd:#f1e3ea;--pr:#b0508a;--rd:#cc4157;--am:#e8b36b;--bl:#3d2540;--in:#fbf2f7;--gn:#3f9e7d;--cr:#f6e4ee;--sel:#3d2540;--tk:#ecdde5;--ic:#3d2540;--h1:#c06f9b;--h2:#a24378;--h3:#e8b8d2;--h4:#dca3c3;--shr:106 47 85;--prr:176 80 138;--selr:61 37 64}@media(prefers-color-scheme:dark){:root[data-pal=berry]:not([data-theme=light]){--bg:#2a1c26;--bg2:#20151d;--cd:#36263a;--tx:#f8eaf2;--mu:#b99fb0;--bd:#4a3646;--pr:#ee86bb;--rd:#ff7b8a;--am:#f2c27a;--bl:#f8eaf2;--in:#433048;--gn:#5fd0a8;--cr:#4a3550;--sel:#150d14;--tk:#523d4f;--ic:#f8eaf2;--h1:#a84b82;--h2:#7a2f5a;--h3:#c46c9f;--h4:#b95d93;--shr:106 47 85;--prr:238 134 187;--selr:21 13 20}}:root[data-pal=berry][data-theme=dark]{--bg:#2a1c26;--bg2:#20151d;--cd:#36263a;--tx:#f8eaf2;--mu:#b99fb0;--bd:#4a3646;--pr:#ee86bb;--rd:#ff7b8a;--am:#f2c27a;--bl:#f8eaf2;--in:#433048;--gn:#5fd0a8;--cr:#4a3550;--sel:#150d14;--tk:#523d4f;--ic:#f8eaf2;--h1:#a84b82;--h2:#7a2f5a;--h3:#c46c9f;--h4:#b95d93;--shr:106 47 85;--prr:238 134 187;--selr:21 13 20}
 :root[data-pal=ocean]{--bg:#e0edf0;--bg2:#cde0e5;--cd:#ffffff;--tx:#16303a;--mu:#6f8a93;--bd:#e0ecef;--pr:#1f8a9e;--rd:#cc4a45;--am:#eeb25a;--bl:#17323d;--in:#eff7f9;--gn:#2f9e77;--cr:#dff0f3;--sel:#17323d;--tk:#dbe8ec;--ic:#17323d;--h1:#3a9fb2;--h2:#1b7a8c;--h3:#a9dce5;--h4:#8fd0db;--shr:29 86 102;--prr:31 138 158;--selr:23 50 61}@media(prefers-color-scheme:dark){:root[data-pal=ocean]:not([data-theme=light]){--bg:#14262d;--bg2:#0f1d22;--cd:#1d333b;--tx:#e6f2f5;--mu:#8fb0ba;--bd:#2d464f;--pr:#4fc3d9;--rd:#ff7b72;--am:#f2bd69;--bl:#e6f2f5;--in:#264047;--gn:#55d1a6;--cr:#254049;--sel:#0b161a;--tk:#31505a;--ic:#e6f2f5;--h1:#2a8ea1;--h2:#176373;--h3:#4fb0c2;--h4:#3fa3b6;--shr:29 86 102;--prr:79 195 217;--selr:11 22 26}}:root[data-pal=ocean][data-theme=dark]{--bg:#14262d;--bg2:#0f1d22;--cd:#1d333b;--tx:#e6f2f5;--mu:#8fb0ba;--bd:#2d464f;--pr:#4fc3d9;--rd:#ff7b72;--am:#f2bd69;--bl:#e6f2f5;--in:#264047;--gn:#55d1a6;--cr:#254049;--sel:#0b161a;--tk:#31505a;--ic:#e6f2f5;--h1:#2a8ea1;--h2:#176373;--h3:#4fb0c2;--h4:#3fa3b6;--shr:29 86 102;--prr:79 195 217;--selr:11 22 26}
-.bkl{display:inline-block;background:var(--cd);border-radius:99px;padding:4px 12px;font-size:12px;margin-bottom:10px;cursor:pointer}
+.bkl{display:inline-flex;align-items:center;gap:6px;background:var(--cd);border-radius:99px;padding:11px 22px 11px 16px;font-size:17px;font-weight:700;min-height:46px;margin-bottom:12px;cursor:pointer;box-shadow:0 6px 16px rgb(var(--shr)/0.18);position:relative;z-index:2}
 .mg{background:var(--in);border-radius:24px;padding:6px;margin-bottom:6px}.mrow{display:flex;align-items:center;gap:12px;padding:10px;border-radius:18px;cursor:pointer;transition:.2s}.mrow:active{background:var(--cd);transform:scale(.98)}.mrow .e{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--cd);flex:none}.mrow .e .ic{width:22px;height:22px}.mrow div{flex:1;min-width:0}.mrow b{display:block}.mrow small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chv{width:18px;height:18px;flex:none;fill:none;stroke:var(--mu);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .psg button{font-size:11.5px;padding:9px 2px}
 #pinl{inset:0;margin:0;width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;border-radius:0;padding:0;animation:none;background:linear-gradient(160deg,var(--bg),var(--bg2))}#pinl[open]{display:flex;align-items:center;justify-content:center}#pinl::backdrop{background:var(--bg)}
@@ -148,19 +148,23 @@ body.priv canvas{filter:blur(10px)}body.priv input[type=number]:not(:focus){filt
 .medp{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:99px;border:1.5px solid var(--bd);background:var(--cd);font-size:11.5px;cursor:pointer;margin:2px}
 .medp.on{background:var(--pr);color:#fff;border-color:var(--pr)}
 
+.wlg{position:relative;display:inline-flex;width:24px;height:24px;border-radius:7px;overflow:hidden;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px;vertical-align:middle}.wlg b{font-size:13px;line-height:1}.wlg img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff}
+.li .e .wlg{width:34px;height:34px;border-radius:10px}
+nav button{position:relative}nav button[data-n]::after{content:attr(data-n);position:absolute;top:1px;right:calc(50% - 24px);min-width:17px;height:17px;border-radius:9px;background:var(--rd);color:#fff;font-size:10px;line-height:17px;font-weight:700;text-align:center;padding:0 4px}
+.tcd{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:2px 0 8px}.tcc{background:var(--in);border-radius:16px;padding:10px 12px}.tcc small{display:block;font-size:11px;color:var(--mu)}.tcc b{font-size:16px;color:var(--pr)}.tdb b{color:var(--rd)}
 </style></head><body><main>
 <div class="top"><div class="lg"><img src="logo.png" alt=""><b>পরিবারের টাকার হিসাব</b></div><div class="tb"><button class="pl" id="lg" onclick="setLang()">EN</button><button class="pl" id="pvb" onclick="togPriv()" aria-label="Privacy mode"></button><button class="pl" onclick="th()" aria-label="Theme">🌓</button></div></div>
 <section id="t-h"><div class="hero"><div class="mn"><button onclick="mv(-1)">‹</button><b id="ml"></b><button onclick="mv(1)">›</button></div><div class="hc2" id="hc2"><button class="eye" id="eye" onclick="eyeT()" aria-label="Hide or show balance"></button><small>হাতে বাকি</small><div class="big" id="hl"></div><div id="hs"></div></div></div><h3 class="sh">এ মাসের সারাংশ</h3><div class="cards" id="hc"></div>
 <div class="qcap"><input id="qcapi" placeholder="⚡ দ্রুত লিখুন: ৫০০ রিকশা / ডিম ১৪০ / কাজ: কল..." onkeydown="if(event.key==='Enter')qcapRun()"><button class="b s" onclick="qcapRun()">⚡</button></div>
 <div class="wstrip" id="wlh"></div>
-<div class="cd" id="lfh"></div><div class="cd hide" id="alh"></div><h3 class="sh">খাত</h3><div class="ctg" id="ct"></div><div id="prh"></div><div class="cd bzc" id="bzh" onclick="bzOpen()"></div><div class="cd bzc" id="clh" onclick="go('k')"></div><div class="cd bzc" id="ish" onclick="go('i')"></div>
-<div class="cd"><h2>💡 পরামর্শ</h2><div id="tp"></div></div>
+<div class="cd" id="t3h"></div>
+<div class="cd" id="lfh"></div><h3 class="sh">খাত</h3><div class="ctg" id="ct"></div><div class="cd bzc" id="bzh" onclick="bzOpen()"></div><div class="cd bzc" id="clh" onclick="go('k')"></div><div class="cd bzc" id="ish" onclick="go('i')"></div>
 <div class="cd" id="bl"><h2>🔁 এ মাসের নিয়মিত বিল</h2><div id="bw"></div></div>
 <div class="cd"><h2>বাজেট বনাম বাস্তব</h2><div id="pb"></div></div>
 <div class="cd"><h2>🕑 সাম্প্রতিক লেনদেন</h2><div id="rc"></div><button class="b o s" onclick="go('t')">সব দেখুন</button></div>
 <details class="cd"><summary>📊 বিশ্লেষণ (চার্ট ও ৫০/৩০/২০)</summary><div class="cv"><canvas id="c1"></canvas></div><div id="ru" style="margin-top:10px"></div></details></section>
 
-<section id="t-t" class="hide"><div class="hd"><h2>লেনদেন</h2><small>সব আয়, খরচ ও সঞ্চয় এক জায়গায়</small></div><div class="cd"><div class="r"><button class="b o s" onclick="mv(-1)">‹</button><b id="ml2"></b><button class="b o s" onclick="mv(1)">›</button></div><div style="display:grid;grid-template-columns:2fr 1fr;gap:8px;margin-bottom:8px"><input id="sq" placeholder="🔎 খুঁজুন (নোট/খাত)" oninput="rT()"><select id="sf" onchange="rT()"></select></div><div id="tl"></div></div></section>
+<section id="t-t" class="hide"><div class="hd"><h2>লেনদেন</h2><small>সব আয়, খরচ ও সঞ্চয় এক জায়গায়</small></div><div class="cd"><div class="r"><button class="b o s" onclick="mv(-1)">‹</button><b id="ml2"></b><button class="b o s" onclick="mv(1)">›</button></div><div style="display:grid;grid-template-columns:2fr 1fr;gap:8px;margin-bottom:8px"><input id="sq" placeholder="🔎 খুঁজুন (নোট/খাত)" oninput="rT()"><select id="sf" onchange="rT()"></select></div><div id="tsum"></div><div id="tl"></div></div></section>
 
 <section id="t-b" class="hide"><div class="hd"><h2>পরিকল্পনা</h2><small>বাজেট, বিল ও সঞ্চয়</small></div><div class="sg seg psg"></div><div class="g"><div class="cd"><h2>💵 নিয়মিত মাসিক আয়</h2><div id="bi"></div><button class="b o s" onclick="D.inc.push({n:'আয়',a:0});sv_();rB()">+ আয়</button><div class="r" style="margin-top:10px"><span>মাসিক সঞ্চয় লক্ষ্য</span><input type="number" id="bs" style="width:120px" onchange="D.save=+this.value||0;sv_();rB()"></div></div>
 <div class="cd"><h2>🧾 খরচের খাত ও সীমা</h2><div id="bc"></div><button class="b o s" onclick="D.cats.push({id:'c'+Date.now(),e:'📌',n:'নতুন খাত',p:0,t:'w'});sv_();rB()">+ খাত</button><div id="bt" style="margin-top:10px"></div></div></div><div class="cd"><h2>🔁 নিয়মিত বিল (প্রতি মাসে)</h2><div id="br"></div><button class="b o s" onclick="D.rec.push({id:'r'+Date.now(),n:'নতুন বিল',a:0,c:D.cats[0]?D.cats[0].id:'',d:5});sv_();rB()">+ বিল</button><br><small>বিল হোমে দেখাবে; "পরিশোধ" চাপলে খরচ হিসেবে যোগ হবে।</small></div></section>
@@ -195,10 +199,11 @@ body.priv canvas{filter:blur(10px)}body.priv input[type=number]:not(:focus){filt
 <section id="t-kt" class="hide"><div id="kt-hd"></div><div id="kt-b"></div></section>
 <section id="t-hm" class="hide"><div id="hm-hd"></div><div id="hm-b"></div></section>
 <section id="t-fm" class="hide"><div id="fm-hd"></div><div id="fm-b"></div></section>
+<section id="t-al" class="hide"><div id="al-hd"></div><div id="al-b"></div></section>
 </main>
 <button class="b fab" onclick="op('e')">+</button>
 <nav id="nv"></nav><div id="ts"></div><dialog id="pkd"></dialog><dialog id="shd"></dialog><dialog id="pinl"></dialog>
-<dialog id="dg"><div class="sg" id="sg"></div><input id="fa" type="number" inputmode="decimal" placeholder="টাকা" onkeydown="if(event.key==='Enter')sv()"><div class="chips" id="qk"></div><select id="fc"></select><select id="fw"></select><input id="fd" type="date"><input id="fn" placeholder="নোট (ঐচ্ছিক)" onkeydown="if(event.key==='Enter')sv()"><div id="rcr"></div><div style="display:flex;gap:8px"><button class="b" style="flex:1" onclick="sv()">সেভ</button><button class="b o hide" id="fx" onclick="rm()">মুছুন</button><button class="b o" onclick="$('dg').close()">বাতিল</button></div></dialog>
+<dialog id="dg"><div class="sg" id="sg"></div><input id="fa" type="number" inputmode="decimal" placeholder="টাকা" onkeydown="if(event.key==='Enter')sv()"><div class="chips" id="qk"></div><select id="fc" onchange="F.cm=1"></select><select id="fw"></select><input id="fd" type="date"><input id="fn" placeholder="নোট (ঐচ্ছিক)" oninput="fnSug()" onkeydown="if(event.key==='Enter')sv()"><div id="rcr"></div><div style="display:flex;gap:8px"><button class="b" style="flex:1" onclick="sv()">সেভ</button><button class="b o hide" id="fx" onclick="rm()">মুছুন</button><button class="b o" onclick="$('dg').close()">বাতিল</button></div></dialog>
 <script>
 let LG='bn';try{LG=localStorage.getItem('lg4')||'bn'}catch(e){}let LC=LG==='en'?'en-US':'bn-BD';let PRIV=false;try{PRIV=JSON.parse(localStorage.getItem('set5')||'{}').priv==1}catch(e){}
 const SV=p=>`<svg viewBox="0 0 24 24">${p}</svg>`,I={h:SV('<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'),t:SV('<path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/>'),b:SV('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/>'),r:SV('<path d="M4 7h16M4 12h16M4 17h10"/>')};
@@ -215,9 +220,10 @@ const ml=m=>{const[y,o]=m.split('-');return new Date(y,o-1,1).toLocaleDateString
 function ts(m,f){const t=$('ts');t.textContent=m;t.onclick=f||null;t.style.pointerEvents=f?'auto':'none';t.style.opacity=1;clearTimeout(t.h);t.h=setTimeout(()=>{t.style.opacity=0;t.style.pointerEvents='none'},f?5000:1900)}
 function th(){const r=document.documentElement,d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark';try{localStorage.setItem('th4',r.dataset.theme)}catch(e){}palSync();render()}
 try{const p=localStorage.getItem('pal4');if(p)document.documentElement.dataset.pal=p}catch(e){}try{const t=localStorage.getItem('th4');if(t)document.documentElement.dataset.theme=t}catch(e){}
-const TB=[['h',I.h,'হোম'],['t',I.t,'লেনদেন'],['b',I.b,'পরিকল্পনা'],['r',I.r,'আরও']],SC=['h','t','b','s','r','c','n','w','z','k','u','m','i','tx','st','sc','bk','rp','ln','vt','wl','td','kt','hm','fm'];
+const TB=[['h',I.h,'হোম'],['t',I.t,'লেনদেন'],['b',I.b,'পরিকল্পনা'],['r',I.r,'আরও']],SC=['h','t','b','s','r','c','n','w','z','k','u','m','i','tx','st','sc','bk','rp','ln','vt','wl','td','kt','hm','fm','al'];
 $('nv').innerHTML=TB.map(t=>`<button data-t="${t[0]}" onclick="go('${t[0]}')"><b>${t[1]}</b>${t[2]}</button>`).join('');
-function go(t){TAB=t;SC.forEach(x=>$('t-'+x).classList.toggle('hide',x!==t));TB.forEach(x=>document.querySelector(`nav [data-t=${x[0]}]`).classList.toggle('on',x[0]===t||(t==='s'&&x[0]==='b')||(t==='z'&&x[0]==='t')||(t==='k'&&x[0]==='h')||('cnw'.includes(t)&&x[0]==='r')));scrollTo(0,0);document.querySelector('.fab').style.display=t==='z'?'none':'';render()}
+const NAVS=[];
+function go(t,nb){if(!nb&&TAB&&TAB!==t){if(NAVS[NAVS.length-1]===t)NAVS.pop();else{NAVS.push(TAB);if(NAVS.length>40)NAVS.shift()}}TAB=t;SC.forEach(x=>$('t-'+x).classList.toggle('hide',x!==t));TB.forEach(x=>document.querySelector(`nav [data-t=${x[0]}]`).classList.toggle('on',x[0]===t||(t==='s'&&x[0]==='b')||(t==='z'&&x[0]==='t')||(t==='k'&&x[0]==='h')||('cnw'.includes(t)&&x[0]==='r')));scrollTo(0,0);document.querySelector('.fab').style.display=t==='z'?'none':'';render()}
 function mv(n){const[y,o]=M.split('-').map(Number),d=new Date(y,o-1+n,1);M=`${d.getFullYear()}-${pad(d.getMonth()+1)}`;render()}
 const cm=()=>Object.fromEntries(D.cats.map(c=>[c.id,c])),inc0=()=>D.inc.reduce((s,x)=>s+x.a,0),pe=()=>D.cats.reduce((s,c)=>s+c.p,0);
 function calc(m){const T=D.tx.filter(x=>x.d.startsWith(m)),by={};let ex=0,sv=0,i2=0;T.forEach(x=>{if(x.k==='e'){ex+=x.a;by[x.c]=(by[x.c]||0)+x.a}else if(x.k==='s')sv+=x.a;else i2+=x.a});const inc=inc0()+i2;return{T,by,ex,sv,inc,left:inc-ex-sv}}
@@ -249,7 +255,6 @@ let h='';if(M===today.slice(0,7)){const dim=new Date(T0.getFullYear(),T0.getMont
 rcn();rbl();
 const ks=D.cats.filter(c=>r.by[c.id]>0),src=ks.length?ks.map(c=>[c.n,r.by[c.id]]):D.cats.filter(c=>c.p).map(c=>[c.n,c.p]);
 mc('c1',{type:'doughnut',data:{labels:src.map(s=>s[0]),datasets:[{data:src.map(s=>s[1]),backgroundColor:PAL,borderWidth:0,borderRadius:6,spacing:3}]},options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10}}}}});
-$('tp').innerHTML=tp(tips(M).slice(0,3));
 $('pb').innerHTML=D.cats.map(c=>{const s=r.by[c.id]||0,q=c.p?s/c.p*100:s?999:0;return `<div style="cursor:pointer;padding:4px 0" onclick="op('e',0,'${c.id}')"><div class="r"><span>${c.e} ${E(c.n)}</span><small>${B(s)} / ${B(c.p)} ＋</small></div><div class="bar"><i style="width:${Math.min(q,100)}%;background:${q>100?'var(--rd)':q>80?'var(--am)':'var(--pr)'}"></i></div></div>`}).join('');
 const S={n:0,w:0},ua=r.ex>0;(ua?r.T.filter(x=>x.k==='e').map(x=>[(cm()[x.c]||{t:'w'}).t,x.a]):D.cats.map(c=>[c.t,c.p])).forEach(a=>S[a[0]]+=a[1]);const sv=ua?r.sv:D.save;
 $('ru').innerHTML=[['প্রয়োজন',S.n,50,1],['চাহিদা',S.w,30,1],['সঞ্চয়',sv,20,0]].map(a=>{const p=r.inc?a[1]/r.inc*100:0,bad=a[3]?p>a[2]:p<a[2];return `<div class="r"><span>${a[0]}</span><span><b>${P(p)}</b> <small>/ ${N(a[2])}%</small></span></div><div class="bar"><i style="width:${Math.min(p,100)}%;background:${bad?'var(--am)':'var(--pr)'}"></i></div>`}).join('')+`<small><br>${ua?'এ মাসের বাস্তব হিসাব':'লেনদেন নেই — বাজেট পরিকল্পনা ভিত্তিক'}</small>`}
@@ -708,7 +713,7 @@ const sset=(k,v)=>{ST[k]=v;try{localStorage.setItem('set5',JSON.stringify(ST))}c
 let NOLOCK=0;const hold=()=>{NOLOCK=Date.now()+120000};
 const idb=(()=>{let p;const o=()=>p||(p=new Promise((r,j)=>{const q=indexedDB.open('fe5',1);q.onupgradeneeded=()=>{['rc','vb','vh'].forEach(s=>q.result.createObjectStore(s))};q.onsuccess=()=>r(q.result);q.onerror=()=>j(q.error)})),t=async(s,m,f)=>{const d=await o();return new Promise((r,j)=>{const x=d.transaction(s,m);let q;try{q=f(x.objectStore(s))}catch(e){return j(e)}x.oncomplete=()=>r(q&&q.result);x.onerror=()=>j(x.error);x.onabort=()=>j(x.error)})};return{get:(s,k)=>t(s,'readonly',o=>o.get(k)),set:(s,k,v)=>t(s,'readwrite',o=>o.put(v,k)),del:(s,k)=>t(s,'readwrite',o=>o.delete(k)),all:s=>t(s,'readonly',o=>o.getAll()),keys:s=>t(s,'readonly',o=>o.getAllKeys())}})();
 function sheet(h){const d=$('shd');d.innerHTML=`<div class="shb">${h}</div>`;d.onclick=e=>{if(e.target===d)d.close()};if(!d.open)d.showModal()}
-const sheetX=()=>{const d=$('shd');if(d.open)d.close()},hd=(t,s,bk)=>`<div class="hd">${bk?`<a class="bkl" onclick="go('${bk}')">‹ ${L('আরও','More')}</a>`:''}<h2>${t}</h2><small>${s||''}</small></div>`;
+const sheetX=()=>{const d=$('shd');if(d.open)d.close()},hd=(t,s,bk)=>`<div class="hd">${bk?`<a class="bkl" onclick="goBack('${bk}')">‹ ${bkLbl(bk)}</a>`:''}<h2>${t}</h2><small>${s||''}</small></div>`;
 async function outFile(name,data,o){o=o||{};const P=CPl(),F2=P.Filesystem;try{if(F2){if(o.share&&P.Share){const r=await F2.writeFile({path:name,directory:'CACHE',data,encoding:o.b64?undefined:'utf8'});hold();await P.Share.share({title:name,files:[r.uri],dialogTitle:name});return 'shared'}await F2.writeFile({path:'FamilyBudget/'+(o.sub||'Backup')+'/'+name,directory:'DOCUMENTS',data,encoding:o.b64?undefined:'utf8',recursive:true});return 'saved'}}catch(e){return 'err'}
 const b=new Blob([o.b64?s2b(data):data],{type:o.mime||'application/octet-stream'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000);return 'dl'}
 /* Bangla (Bangladesh revised) calendar: year starts 14 April; first six months 31 days; Falgun 29/30 */
@@ -719,8 +724,8 @@ function hjDate(s){const d=dd(s);d.setDate(d.getDate()+sget('hj',-1));try{const 
 const inD=n=>LG==='en'&&n===1?'tomorrow':(LG==='en'?'in '+N(n)+' days':N(n)+' দিন পর'),N1=x=>(+x||0).toLocaleString(LC,{maximumFractionDigits:1}),N2=x=>(+x||0).toLocaleString(LC,{maximumFractionDigits:2});
 
 /*==== N2 NAVIGATION: tab/section router, Plan segments, More hub ====*/
-const HLM={s:'b',u:'b',m:'b',z:'t',k:'h',i:'h',wl:'h',td:'h',kt:'t',hm:'r',fm:'r'},FABON=['h','t','k','td','wl'];
-function go(t){TAB=t;SC.forEach(x=>$('t-'+x).classList.toggle('hide',x!==t));const hl=HLM[t]||(['h','t','b','r'].includes(t)?t:'r');TB.forEach(x=>document.querySelector(`nav [data-t=${x[0]}]`).classList.toggle('on',x[0]===hl));scrollTo(0,0);document.querySelector('.fab').style.display=FABON.includes(t)?'':'none';psgDraw();render()}
+const HLM={s:'b',u:'b',m:'b',z:'t',k:'h',i:'h',wl:'h',td:'h',kt:'t',hm:'r',fm:'r',al:'r'},FABON=['h','t','k','td','wl'];
+function go(t,nb){if(!nb&&TAB&&TAB!==t){if(NAVS[NAVS.length-1]===t)NAVS.pop();else{NAVS.push(TAB);if(NAVS.length>40)NAVS.shift()}}TAB=t;SC.forEach(x=>$('t-'+x).classList.toggle('hide',x!==t));const hl=HLM[t]||(['h','t','b','r'].includes(t)?t:'r');TB.forEach(x=>document.querySelector(`nav [data-t=${x[0]}]`).classList.toggle('on',x[0]===hl));scrollTo(0,0);document.querySelector('.fab').style.display=FABON.includes(t)?'':'none';psgDraw();render()}
 function render(){const f=RM[TAB];f&&f()}
 function psgDraw(){const A=[['b',L('বাজেট','Budget')],['s',L('সঞ্চয়','Savings')],['u',L('সাবস্ক্রিপশন','Subscriptions')],['m',L('ইউটিলিটি','Utilities')]];document.querySelectorAll('.psg').forEach(e=>{e.innerHTML=A.map(a=>`<button class="${a[0]===TAB?'on':''}" onclick="go('${a[0]}')">${a[1]}</button>`).join('')})}
 const CHV='<svg class="chv" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>',mrow=a=>`<div class="mrow" onclick="${a[3]}"><span class="e">${a[0]}</span><div><b>${a[1]}</b><small>${a[2]||''}</small></div>${CHV}</div>`;
@@ -1052,13 +1057,6 @@ function calSetDraw(){const o=sget('hj',-1);$('st-cal').innerHTML=`<div class="c
 function stPage(){$('st-hd').innerHTML=hd(L('সেটিংস','Settings'),L('থিম, ভাষা, নোটিফিকেশন ও ক্যালেন্ডার','Theme, language, notifications and calendar'),'r');updDraw();stDraw();netDraw();nfDraw();calSetDraw()}
 
 /*==== N8 DATA: quick presets, receipt photos, encrypted cloud backup, family sync file ====*/
-/* quick presets (one-tap expenses) */
-function prH(){const cp=cm();$('prh').innerHTML=`<div class="r"><h3 class="sh" style="margin:0">⚡ ${L('এক ট্যাপে খরচ','One-tap expenses')}</h3><button class="b o s" onclick="prMgr()">✎ ${L('সম্পাদনা','Edit')}</button></div><div class="chips">${D.pr.map(p=>`<button class="pri" onclick="prTap('${p.id}')"><span>${(cp[p.c]||{e:'📌'}).e}</span><b>${E(p.n)}</b><small>${B(p.a)}</small></button>`).join('')||`<small>${L('"সম্পাদনা" চেপে প্রিসেট যোগ করুন (যেমন রিকশা ৳৩০)','Tap "Edit" to add presets (e.g. Rickshaw ৳30)')}</small>`}</div>`}
-function prTap(id){const p=D.pr.find(x=>x.id===id);if(!p)return;const tid=Date.now();D.tx.push({id:tid,d:today,k:'e',c:p.c,a:p.a,n:p.n,pr:p.id});sv_();render();ts(`${p.n} ${B(p.a)} ✓ — ${L('পূর্বাবস্থায় ফিরুন','Undo')}`,()=>{D.tx=D.tx.filter(x=>x.id!==tid);sv_();render()})}
-function prMgr(){sheet(`<h2>⚡ ${L('এক ট্যাপের প্রিসেট','One-tap presets')}</h2>${D.pr.map(p=>`<div class="row2" style="grid-template-columns:1fr 80px auto"><input value="${E(p.n)}" onchange="prSet('${p.id}','n',this.value)"><input type="number" value="${p.a}" onchange="prSet('${p.id}','a',+this.value||0)"><button class="x" onclick="prDel('${p.id}')">🗑</button><select style="grid-column:1/-1" onchange="prSet('${p.id}','c',this.value)">${D.cats.map(c=>`<option value="${c.id}"${c.id===p.c?' selected':''}>${c.e} ${E(c.n)}</option>`).join('')}</select></div>`).join('')}<button class="b" style="width:100%" onclick="prAdd()">＋ ${L('নতুন প্রিসেট','New preset')}</button>`)}
-function prSet(id,k,v){const p=D.pr.find(x=>x.id===id);p[k]=v;sv_();render()}
-function prDel(id){D.pr=D.pr.filter(x=>x.id!==id);sv_();prMgr();render()}
-function prAdd(){D.pr.push({id:uid('p'),n:L('নতুন','New'),a:20,c:D.cats[0].id});sv_();prMgr();render()}
 /* receipt photos (stored privately in IndexedDB, downscaled) */
 let RCP=null,RCX=false;
 async function imgDown(f,mx,q){let bm;try{bm=await createImageBitmap(f)}catch(e){bm=await new Promise((r,j)=>{const i=new Image();i.onload=()=>r(i);i.onerror=j;i.src=URL.createObjectURL(f)})}const w=bm.width||bm.naturalWidth,h=bm.height||bm.naturalHeight,s=Math.min(1,mx/Math.max(w,h)),c=document.createElement('canvas');c.width=Math.round(w*s);c.height=Math.round(h*s);const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(bm,0,0,c.width,c.height);return new Promise(r=>c.toBlob(r,'image/jpeg',q))}
@@ -1142,13 +1140,13 @@ ${c.signed===false?`<div class="tp w">${L('এই বিল্ড ডিবা�
 const sv0=sv_,catId=n=>(D.cats.find(c=>c.n.includes(n))||D.cats[0]||{}).id;
 {const _f=fix;fix=function(){_f();D.sub=D.sub||[];D.mt=D.mt||[];D.fx=D.fx||{r:{}};D.fx.r=D.fx.r||{};D.tax=D.tax||{cat:'g',ex:0,inv:0,proj:1};D.del=D.del||{};D.vx=D.vx||[];D.nf=D.nf||{};
 if(!D.bzt)D.bzt=[{id:'t1',n:L('সাপ্তাহিক বাজার','Weekly bazaar'),items:L(['চাল','ডাল','তেল','ডিম','সবজি','মাছ/মাংস','দুধ'],['Rice','Lentils','Oil','Eggs','Vegetables','Fish/meat','Milk']).map(n=>({n}))},{id:'t2',n:L('মাসের বাজার','Monthly bazaar'),items:L(['চাল','ডাল','তেল','চিনি','লবণ','আটা/ময়দা','মসলা','সাবান/শ্যাম্পু','চা-পাতা'],['Rice','Lentils','Oil','Sugar','Salt','Flour','Spices','Soap/shampoo','Tea leaves']).map(n=>({n}))}];
-if(!D.pr)D.pr=[{id:'p1',n:L('রিকশা','Rickshaw'),a:30,c:catId('যাতায়াত')},{id:'p2',n:L('বাস ভাড়া','Bus fare'),a:40,c:catId('যাতায়াত')},{id:'p3',n:L('চা-নাস্তা','Tea & snacks'),a:50,c:catId('বিনোদন')}];stampInit()}}
+stampInit()}}
 {const _s=sv_;sv_=function(){stamp();_s();nfLater()}}
 {const _o=op;op=function(){RCP=null;RCX=false;_o.apply(0,arguments);rcDraw()}}
 {const _v=sv;sv=async function(){const was=F.id,pend=RCP,rx=RCX;await _v();if($('dg').open)return;RCP=null;RCX=false;rcCommit(was,pend,rx)}}
 {const _l=li;li=function(x,cp){const h=_l(x,cp);return x.rc?h.replace('</span>','</span><i class="clip" onclick="event.stopPropagation();rcView('+x.id+')">📎</i>'):h}}
 {const _d=dl;dl=function(k,m){if(k==='j')sset('lastBk',today);return _d(k,m)}}
-{const _h=rH;rH=function(){_h();insH();alH();prH()}}
+{const _h=rH;rH=function(){_h();insH()}}
 const rpDraw=function(){const ms=months();$('ar').innerHTML=`<table><tr><th>মাস</th><th>আয়</th><th>খরচ</th><th>সঞ্চয়</th><th></th></tr>`+ms.map(m=>{const r=calc(m);return `<tr><td><a href="#" onclick="M='${m}';go('h');return false" style="color:var(--bl)">${ml(m)}</a></td><td>${B(r.inc)}</td><td>${B(r.ex)}</td><td>${B(r.sv)} <small>${P(r.inc?r.sv/r.inc*100:0)}</small></td><td><button class="b o s" onclick="dl('r','${m}')">⬇</button></td></tr>`}).join('')+'</table>';$('nt').value=D.notes[M]||'';
 const ys=ms.slice(0,12).reverse(),cs=ys.map(calc);mc('c3',{type:'bar',data:{labels:ys.map(m=>new Date(m.slice(0,4),m.slice(5)-1,1).toLocaleDateString(LC,{month:'short'})),datasets:[{label:'আয়',data:cs.map(c=>c.inc),backgroundColor:'#3f8f7b'},{label:'খরচ',data:cs.map(c=>c.ex),backgroundColor:'#c8504a'},{label:'সঞ্চয়',data:cs.map(c=>c.sv),backgroundColor:'#e0a955'}]},options:{maintainAspectRatio:false,plugins:{legend:{labels:{boxWidth:10}}}}});gs()};
 function lnDraw(){$('ln-hd').innerHTML=hd(L('ধার খাতা','Loan book'),L('কাকে কত দেবেন/পাবেন','Who owes what'),'r');rL()}
@@ -1212,7 +1210,7 @@ function wlBal(w){
 }
 function wlStrip(){
   const e=$('wlh');if(!e||!D.wl)return;
-  e.innerHTML=D.wl.map(w=>`<div class="wpill" onclick="go('wl')"><small>${w.e||'💳'} ${E(w.n)}</small><b>${B(wlBal(w))}</b></div>`).join('')
+  e.innerHTML=D.wl.map(w=>`<div class="wpill" onclick="go('wl')"><small>${wlIc(w)} ${E(w.n)}</small><b>${B(wlBal(w))}</b></div>`).join('')
     +`<div class="wpill" onclick="wlTrForm()" style="display:flex;align-items:center;justify-content:center;min-width:86px"><b>⇄ ${L('ট্রান্সফার','Transfer')}</b></div>`;
 }
 function wlDraw(){
@@ -1225,7 +1223,7 @@ function wlDraw(){
     <div style="display:flex;gap:8px;margin-top:10px"><button class="b" style="flex:1" onclick="wlForm()">＋ ${L('নতুন ওয়ালেট','New wallet')}</button><button class="b o" style="flex:1" onclick="wlTrForm()">⇄ ${L('ট্রান্সফার / ক্যাশ-আউট','Transfer / Cash-out')}</button></div></div>`
     +`<div class="cd"><h2>💳 ${L('সব ওয়ালেট','All wallets')}</h2>`+D.wl.map(w=>{
       const bal=wlBal(w);
-      return `<div class="li" onclick="wlForm('${w.id}')"><span class="e">${w.e||'💳'}</span><div><b>${E(w.n)}</b><br><small>${L('শুরুর ব্যালেন্স','Opening')}: ${B(w.b0||0)}</small></div><b style="color:${bal<0?'var(--rd)':'var(--tx)'}">${B(bal)}</b></div>`;
+      return `<div class="li" onclick="wlForm('${w.id}')"><span class="e">${wlIc(w)}</span><div><b>${E(w.n)}</b><br><small>${L('শুরুর ব্যালেন্স','Opening')}: ${B(w.b0||0)}</small></div><b style="color:${bal<0?'var(--rd)':'var(--tx)'}">${B(bal)}</b></div>`;
     }).join('')+`</div>`
     +(trs.length?`<div class="cd"><h2>⇄ ${L('সাম্প্রতিক ট্রান্সফার','Recent transfers')}</h2>`+trs.map(tr=>{
       const wf=wmap[tr.f]||{n:'?',e:'💳'},wt=wmap[tr.t]||{n:'?',e:'💳'};
@@ -1236,7 +1234,7 @@ function wlForm(id){
   const w=id?D.wl.find(x=>x.id===id):{n:'',e:'📱',tp:'mfs',b0:0};
   const ems=['💵','📱','🏦','💳','🪙','👛','💼'];
   sheet(`<h2>${id?L('ওয়ালেট সম্পাদনা','Edit wallet'):L('নতুন ওয়ালেট','New wallet')}</h2>
-    <small>${L('নাম','Name')}</small><input id="wln" value="${E(w.n)}" placeholder="${L('যেমন: বিকাশ / DBBL ব্যাংক','e.g. bKash / DBBL Bank')}">
+    <small>${L('নাম','Name')}</small><input id="wln" value="${E(w.n)}" placeholder="${L('যেমন: বিকাশ / DBBL ব্যাংক','e.g. bKash / DBBL Bank')}"><div class="chips" style="margin:6px 0">${['bKash','Nagad','Rocket','Upay'].map(n=>`<button type="button" onclick="$('wln').value='${n}';$('wlt').value='mfs'">${wlIc({n})} ${n}</button>`).join('')}</div>
     <small>${L('ধরন','Type')}</small><select id="wlt">${WTYPES.map(t=>`<option value="${t[0]}"${t[0]===w.tp?' selected':''}>${t[1]} ${t[2]}</option>`).join('')}</select>
     <small>${L('আইকন','Icon')}</small><select id="wle">${ems.map(e=>`<option value="${e}"${e===w.e?' selected':''}>${e}</option>`).join('')}</select>
     <small>${L('শুরুর ব্যালেন্স (৳)','Opening balance (৳)')}</small><input id="wlb" type="number" inputmode="decimal" value="${w.b0||0}">
@@ -1449,7 +1447,7 @@ function fmDraw(){
   </div>
   <div class="cd" id="sec-baby"><h2>👶 ${L('শিশুর বৃদ্ধি ও টিকা (Ihan)','Toddler growth & vaccines (Ihan)')}</h2>
     <div class="bzq"><input id="kgh" type="number" step="0.1" placeholder="${L('উচ্চতা (cm)','Height (cm)')}"><input id="kgw" type="number" step="0.1" placeholder="${L('ওজন (kg)','Weight (kg)')}"><button class="b s" onclick="kidGrAdd()">＋</button></div>
-    ${kg.length?`<div style="margin-top:8px">`+kg.slice(-4).reverse().map(g=>`<div class="r"><small>${g.d}</small><b>${g.h?N1(g.h)+' cm · ':''}${g.w?N1(g.w)+' kg':''}</b></div>`).join('')+`</div>`:''}
+    ${kg.length?`<div style="margin-top:8px">`+kg.map((g,i)=>[g,i]).slice(-6).reverse().map(([g,i])=>`<div class="r"><small>${g.d}</small><b>${g.h?N1(g.h)+' cm · ':''}${g.w?N1(g.w)+' kg':''}</b><span><button class="b o s" onclick="kgEdit(${i})">✎</button><button class="x" onclick="kgDel(${i})">🗑</button></span></div>`).join('')+`</div>`:''}
     <div id="kgch"></div><h3 class="sh">${L('টিকার তালিকা','Vaccine checklist')}</h3>
     ${kv.map((v,i)=>`<div class="li" style="cursor:default"><button class="ck" style="${v.dn?'background:var(--gn);border-color:var(--gn)':''}" onclick="kidVxTog(${i})">${v.dn?'✓':''}</button><div style="flex:1"><b>${E(v.n)}</b><br><small>${v.d||''}</small></div></div>`).join('')}
   </div>
@@ -1503,18 +1501,18 @@ function qcapRun(){
   }
   // 3. Number + text -> Expense or multi-item bazaar
   const items=parseBz(raw);
-  if(items.length>1 && items.every(x=>x.a>0)){
+  if(items.length>1 && items.every(x=>x.a>0)){if(qcMulti(items,inp))return;
     items.forEach(x=>bzPutQ(today,x.n,x.a));inp.value='';sv_();render();
     return ts(L(`🛒 ${N(items.length)}টি আইটেম বাজারে যোগ হয়েছে ✓`,`🛒 Added ${N(items.length)} items to bazaar ✓`));
   }
   const mNum=norm.match(/(\d+(?:\.\d+)?)/);
   if(mNum){
     const amt=+mNum[1],note=raw.replace(mNum[0],'').replace(/টাকা|taka|tk|৳/gi,'').trim()||L('দ্রুত খরচ','Quick expense');
-    const cGuess=/রিকশা|বাস|সিএনজি|uber|pathao|ভাড়া/i.test(note)?catId('যাতায়াত'):/বাজার|ডিম|চাল|সবজি|মাছ|মাংস|দুধ/i.test(note)?catId('বাজার'):/ওষুধ|ডাক্তার|মেডিকেল/i.test(note)?catId('চিকিৎসা'):/ইহান|ডায়াপার|শিশু/i.test(note)?catId('শিশু'):catId('বিনোদন');
+    const cGuess=autoCat(note,amt)||_cid('অপ্রত্যাশিত')||catId('বিনোদন');
     const id=Date.now();
     D.tx.push({id,d:today,k:'e',c:cGuess,a:amt,n:note,w:D.wl[0]?D.wl[0].id:''});
     inp.value='';sv_();render();
-    return ts(`${note} ${B(amt)} ✓ — ${L('পূর্বাবস্থায় ফিরুন','Undo')}`,()=>{D.tx=D.tx.filter(t=>t.id!==id);sv_();render()});
+    return ts(`${note} ${B(amt)} → ${catLbl(cGuess)} ✓ — ${L('পূর্বাবস্থায় ফিরুন','Undo')}`,()=>{D.tx=D.tx.filter(t=>t.id!==id);sv_();render()});
   }
   // 4. Plain text without number -> Add to Today's Tasks
   D.td.unshift({id:uid('td'),n:raw,ar:'home',d:today,top:0,dn:0});
@@ -1619,8 +1617,15 @@ function lifeH(){
 {const _hub2=hubDraw;hubDraw=function(){
   _hub2();
   const b=$('r-b');if(!b)return;
-  const lifeGrp=`<h3 class="sh">${L('দৈনিক জীবন ও পরিবার হাব','Daily life & family hub')}</h3><div class="mg">`+[
-    ['💳',L('মাল্টি-ওয়ালেট হাব','Multi-wallet hub'),L('ক্যাশ, বিকাশ, নগদ, ব্যাংক ও ট্রান্সফার','Cash, bKash, Nagad, bank & transfers'),"go('wl')"],
+  const tot=(D.wl||[]).reduce((q,w)=>q+(w.tp==='card'?0:wlBal(w)),0),AN=alerts().length,open=sget('hubLife',0);
+  const wlGrp=`<h3 class="sh">${L('মাল্টি-ওয়ালেট হাব','Multi-wallet hub')}</h3><div class="mg">`+[
+    ['💳',L('ওয়ালেট ও অ্যাকাউন্ট','Wallets & accounts'),L('মোট তরল ব্যালেন্স: ','Liquid balance: ')+B(tot),"go('wl')"],
+    ['⇄',L('ট্রান্সফার / ক্যাশ-আউট','Transfer / cash-out'),L('ওয়ালেটের মধ্যে টাকা সরান','Move money between wallets'),"wlTrForm()"]
+  ].map(mrow).join('')+`</div>`;
+  const alGrp=`<h3 class="sh">${L('সতর্কতা ও পরামর্শ','Alerts & tips')}</h3><div class="mg">`+[
+    ['🔔',L('সতর্কতা, রিমাইন্ডার ও পরামর্শ','Alerts, reminders & tips'),AN?L(`${N(AN)}টি সক্রিয় সতর্কতা`,`${N(AN)} active alert(s)`):L('এখন কোনো সতর্কতা নেই','No active alerts'),"go('al')"]
+  ].map(mrow).join('')+`</div>`;
+  const lifeGrp=`<h3 class="sh" onclick="lifeTog()" style="cursor:pointer;display:flex;justify-content:space-between;align-items:center"><span>🏠 ${L('দৈনিক জীবন ও পরিবার হাব','Daily life & family hub')}</span><span style="font-size:20px">${open?'▾':'▸'}</span></h3>`+(open?`<div class="mg">`+[
     ['🗓',L('ডেইলি প্ল্যানার','Daily planner'),L('সেরা ৩ কাজ ও এলাকাভিত্তিক রুট','Top-3 priorities & route errands'),"goSec('td','sec-plan')"],
     ['🔥',L('হ্যাবিট ট্র্যাকার','Habit tracker'),L('দৈনিক অভ্যাস ও স্ট্রিক','Daily habits & streaks'),"goSec('td','sec-habit')"],
     ['⏱',L('ফোকাস টাইমার','Focus timer'),L('পমোডোরো — অ্যাপের বাইরেও অ্যালার্ম','Pomodoro — alarm even outside the app'),"goSec('td','sec-focus')"],
@@ -1632,8 +1637,8 @@ function lifeH(){
     ['🩺',L('ডাক্তার ভিজিট ও প্রেসক্রিপশন','Doctor visits & prescriptions'),L('ফলো-আপ তারিখ ও প্রেসক্রিপশনের ছবি','Follow-ups & prescription photos'),"goSec('fm','sec-dv')"],
     ['💊',L('ওষুধ ও ভাইটালস','Medicines & vitals'),L('রুটিন ও BP/সুগার ট্রেন্ড','Routine & BP/sugar trends'),"goSec('fm','sec-med')"],
     ['🎁',L('দাওয়াত ও উপহার খাতা','Events & gift ledger'),L('অনুষ্ঠান ও উপহারের বাজেট','Event dates & gift budgets'),"goSec('fm','sec-evt')"]
-  ].map(mrow).join('')+`</div>`;
-  b.insertAdjacentHTML('afterbegin',lifeGrp);
+  ].map(mrow).join('')+`</div>`:'');
+  b.insertAdjacentHTML('afterbegin',wlGrp+alGrp+lifeGrp);
 }}
 
 // Extend Alerts with Life OS reminders
@@ -1710,7 +1715,7 @@ function kgSave(){const d=$('kgdob').value;if(!d)return ts(L('জন্ম ত�
 function kgChart(){const e=$('kgch');if(!e)return;const k=D.kid,dob=k.dob,sx=k.sx;
   const top=`<div class="r" style="margin:10px 0 4px"><small>${dob?L('জন্ম: ','Born: ')+dob+' · '+(sx==='f'?L('মেয়ে','Girl'):L('ছেলে','Boy')):L('জন্ম তারিখ দেওয়া হয়নি','No birth date yet')}</small><button class="b o s" onclick="kgSet()">✎ ${L('প্রোফাইল','Profile')}</button></div>`;
   if(!dob||!sx){e.innerHTML=top+`<small>${L('গ্রোথ কার্ভ দেখতে জন্ম তারিখ ও ছেলে/মেয়ে বেছে নিন।','Set the birth date and boy/girl to see the growth curve.')}</small>`;return}
-  const pts=(k.gr||[]).filter(g=>g[KG_K]>0&&g.d>=dob).map(g=>({x:+(diffD(g.d,dob)/30.4375).toFixed(2),y:+g[KG_K]}));
+  const pts=(k.gr||[]).filter(g=>g[KG_K]>0&&g.d>=dob).map(g=>({x:+(diffD(g.d,dob)/30.4375).toFixed(2),y:+g[KG_K]})).sort((a,b)=>a.x-b.x);
   const mx=Math.min(36,Math.max(12,Math.ceil((pts.length?Math.max(...pts.map(p=>p.x)):0)+3)));
   e.innerHTML=top+`<div class="chips" style="margin-bottom:6px"><button class="${KG_K==='h'?'on':''}" onclick="KG_K='h';kgChart()">${L('উচ্চতা','Height')}</button><button class="${KG_K==='w'?'on':''}" onclick="KG_K='w';kgChart()">${L('ওজন','Weight')}</button></div><canvas id="chKg" height="230"></canvas><small>${pts.length?'':L('এখনো কোনো মাপ নেই। ',' ')}${L('ডটেড রেখা: WHO রেফারেন্স (≈ −২SD/+২SD, গোলাকৃত মান, ০–৩৬ মাস)। এটি ডাক্তারের পরামর্শের বিকল্প নয়।','Dashed lines: WHO reference (≈ −2SD/+2SD, rounded values, 0–36 months). Not a substitute for medical advice.')}</small>`;
   const band=i=>{const o=[];for(let m=0;m<=mx;m+=.5)o.push({x:m,y:+whoAt(sx,KG_K,m)[i].toFixed(2)});return o},ln=(c,dash)=>({showLine:true,pointRadius:0,borderColor:c,borderWidth:1.5,borderDash:dash?[5,4]:[]});
@@ -1795,8 +1800,86 @@ function wlBalAt(w,end){let b=+w.b0||0;D.tx.forEach(x=>{if(x.w===w.id&&x.d<=end)
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&sget('updA',1)&&sget('net',1)&&Date.now()-sget('updT',0)>6*36e5)setTimeout(()=>updCheck(false),1500)});
 
 
+/*==== N20 (v2.2.0): auto-category, back navigation, alerts screen, home top-3, growth edit, credit/debit, wallet logos ====*/
+
+/* --- 7. auto-category from free text (Bangla, English and Banglish words) --- */
+const _acRx=(bn,en)=>new RegExp('(?:'+bn.join('|')+')|(?:^|[^a-z])(?:'+en.join('|')+')s?(?![a-z])','i');
+const AC=[
+ ['বিদ্যুৎ',_acRx(['বিদ্যুৎ','ইলেকট্রিক','প্রিপেইড মিটার','মিটার রিচার্জ'],['electricity','electric bill','current bill','power bill','prepaid meter','meter recharge','dpdc','desco','nesco','bidyut'])],
+ ['গ্যাস',_acRx(['গ্যাস','সিলিন্ডার','তিতাস'],['gas','cylinder','lpg','titas'])],
+ ['ইন্টারনেট ও মোবাইল',_acRx(['ইন্টারনেট','ওয়াইফাই','মোবাইল','রিচার্জ','ডাটা প্যাক','গ্রামীণ','রবি ','বাংলালিংক','টেলিটক','এয়ারটেল','সিম'],['internet','wifi','wi-fi','broadband','mobile','recharge','flexiload','data pack','grameenphone','gp','robi','banglalink','airtel','teletalk','sim','minute','router'])],
+ ['সার্ভিস চার্জ ও পানি',_acRx(['সার্ভিস চার্জ','পানি','ওয়াসা','ময়লা','গার্ড','লিফট','জেনারেটর','মেইনটেন্যান্স','কেয়ারটেকার'],['service charge','water','wasa','garbage','lift','generator','maintenance','caretaker','security guard'])],
+ ['চিকিৎসা',_acRx(['ওষুধ','ঔষধ','ডাক্তার','হাসপাতাল','ফার্মেসি','মেডিকেল','নাপা','টেস্ট','এক্স-রে','ডায়াগনস্টিক','ক্লিনিক','ইনজেকশন','স্যালাইন','ভিটামিন','প্রেসক্রিপশন','দাঁতের','চোখের','অপারেশন','চেকআপ'],['medicine','osudh','oshudh','doctor','dr','hospital','pharmacy','medical','napa','test','x-ray','xray','diagnostic','pathology','checkup','check-up','clinic','injection','saline','vitamin','prescription','dental','surgery','ecg','ultrasound'])],
+ ['শিশুর খরচ',_acRx(['ইহান','শিশু','বেবি','ডায়াপার','প্যাম্পার্স','সেরেলাক','ফর্মুলা','ল্যাকটোজেন','খেলনা','টিকা','ফিডার','স্কুল','টিউশন','কোচিং'],['ihan','baby','diaper','pampers','cerelac','formula','lactogen','nan pro','toy','vaccine','feeder','school','tuition','coaching','kids?'])],
+ ['ভাড়া',_acRx(['বাসা ভাড়া','বাড়ি ভাড়া','ফ্ল্যাট ভাড়া','মাসিক ভাড়া'],['house rent','flat rent','home rent','bari vara','basa vara','monthly rent'])],
+ ['যাতায়াত',_acRx(['রিকশা','রিক্সা','বাস(?![\u09BE-\u09CC])','বাসে','সিএনজি','ট্যাক্সি','মেট্রো','ট্রেন','লঞ্চ','ফেরি','টিকিট','পেট্রোল','অকটেন','ডিজেল','জ্বালানি','পার্কিং','টোল','লেগুনা','টেম্পু','বাইক','গাড়ি'],['rickshaw','rikshaw','riksha','bus','cng','uber','pathao','obhai','taxi','fare','metro','train','launch','ferry','ticket','petrol','octane','diesel','fuel','parking','toll','ride','leguna','tempo','bike','car'])],
+ ['পোশাক ও উৎসব',_acRx(['পোশাক','জামা','শার্ট','প্যান্ট','শাড়ি','পাঞ্জাবি','জুতা','স্যান্ডেল','ঈদ','পূজা','উৎসব','দর্জি','লন্ড্রি','গয়না','সেলুন','পার্লার','চুল কাটা'],['cloth','clothes','dress','shirt','pant','saree','sari','panjabi','shoe','sandal','eid','puja','festival','tailor','laundry','jewelry','jewellery','salon','parlour','parlor','haircut'])],
+ ['বিনোদন ও সামাজিকতা',_acRx(['সিনেমা','রেস্টুরেন্ট','হোটেল','বিরিয়ানি','পিৎজা','বার্গার','ক্যাফে','দাওয়াত','উপহার','গিফট','পার্টি','পিকনিক','ঘুরতে','ভ্রমণ','নেটফ্লিক্স','ফুচকা','চটপটি','শাওয়ারমা','আইসক্রিম','বিয়ে','জন্মদিন','খেলা','গেম'],['movie','cinema','restaurant','hotel','biryani','biriyani','pizza','burger','kfc','foodpanda','food panda','cafe','dawat','gift','party','picnic','outing','tour','trip','netflix','spotify','chorki','hoichoi','fuchka','chotpoti','shawarma','ice cream','icecream','wedding','birthday','game','cinemas?'])],
+ ['অপ্রত্যাশিত',_acRx(['মেরামত','মিস্ত্রি','জরিমানা','দুর্ঘটনা','জরুরি','ক্ষতি','প্লাম্বার','রিপেয়ার'],['repair','mistri','fine','penalty','accident','emergency','plumber','damage','broken'])],
+ ['বাজার',_acRx(['ডিম','চাল','ডাল','তেল','চিনি','লবণ','আটা','ময়দা','দুধ','সবজি','তরকারি','মাছ','মুরগি','গরুর','খাসি','মাংস','আলু','পেঁয়াজ','পেয়াজ','রসুন','আদা','টমেটো','মরিচ','মসলা','পাউরুটি','রুটি','বিস্কুট','ফল(?![\u09BE-\u09CC])','কলা','আপেল','আম ','লেবু','ধনিয়া','শাক','বেগুন','নুডলস','সাবান','শ্যাম্পু','ডিটারজেন্ট','বাজার','মুদি','কাঁচাবাজার','চা-পাতা','চা পাতা','মুড়ি','চিড়া','ঘি','মধু','খেজুর','সেমাই','নারিকেল'],['egg','rice','dal','lentil','oil','sugar','salt','flour','atta','maida','milk','vegetable','veg','sobji','fish','mach','chicken','murgi','meat','beef','mutton','mangsho','potato','alu','onion','peyaj','garlic','roshun','ginger','tomato','chili','chilli','morich','spice','masala','bread','biscuit','fruit','banana','apple','mango','lemon','noodles','soap','shampoo','detergent','grocery','groceries','bazar','bazaar','dim','chal','tel','chini','lobon','ata','moyda','dudh','torkari','tea leaf','muri','chira','ghee','honey'])]
+];
+const _cid=n=>{const c=D.cats.find(c=>c.n.includes(n));return c?c.id:null};
+function autoCat(text,amt){const t=String(text||'').toLowerCase().trim();if(!t)return null;
+  for(const[n,rx]of AC)if(rx.test(t))return _cid(n);
+  if(/ভাড়া|(^|[^a-z])(rent|vara|bhara)(?![a-z])/i.test(t))return _cid(amt>=3000?'ভাড়া':'যাতায়াত');                 /* bare "rent / ভাড়া": big amount = house rent, small = fare */
+  if(/চা|(^|[^a-z])(tea|cha|coffee)(?![a-z])/i.test(t))return _cid(amt>0&&amt<=150?'বিনোদন':'বাজার');          /* a cup of tea = out & about, a packet = groceries */
+  return null}
+const catLbl=id=>{const c=D.cats.find(c=>c.id===id);return c?c.e+' '+c.n:L('অন্যান্য','Other')};
+/* several amounts in one line: groceries go to the bazaar list, everything else becomes its own expense */
+function qcMulti(items,inp){const gid=_cid('বাজার'),ex=[],bz=[];items.forEach(x=>{const c=autoCat(x.n,x.a);(c&&c!==gid?ex:bz).push([x,c])});
+  if(!ex.length)return false;
+  bz.forEach(([x])=>bzPutQ(today,x.n,x.a));ex.forEach(([x,c])=>D.tx.push({id:Date.now()+Math.floor(Math.random()*1e6),d:today,k:'e',c,a:x.a,n:x.n,w:D.wl[0]?D.wl[0].id:''}));
+  inp.value='';sv_();render();ts(L(`✓ ${N(ex.length)}টি খরচ খাতভেদে + ${N(bz.length)}টি বাজারে যোগ হয়েছে`,`✓ ${N(ex.length)} expense(s) by category + ${N(bz.length)} to bazaar`));return true}
+/* main add dialog: suggest the category from the note (only until the user picks one) */
+function fnSug(){if(F.k!=='e'||F.cm||F.id)return;const c=autoCat($('fn').value,+$('fa').value||0);if(c)$('fc').value=c}
+
+/* --- 2. back navigation: bigger back button + device back goes to the previous screen --- */
+let EXIT_T=0;
+const TABN={h:L('হোম','Home'),t:L('লেনদেন','Transactions'),b:L('পরিকল্পনা','Plan'),r:L('আরও','More'),wl:L('ওয়ালেট','Wallets'),td:L('প্ল্যানার','Planner'),kt:L('কিচেন','Kitchen'),hm:L('হোম খাতা','Home ledger'),fm:L('পরিবার','Family'),al:L('সতর্কতা','Alerts'),z:L('বাজার','Bazaar'),k:L('ক্যালেন্ডার','Calendar'),i:L('ইনসাইট','Insights'),st:L('সেটিংস','Settings'),bk:L('ব্যাকআপ','Backup'),rp:L('রিপোর্ট','Reports'),ln:L('ধার খাতা','Loans'),vt:L('ভল্ট','Vault'),s:L('সঞ্চয়','Savings'),u:L('সাবস্ক্রিপশন','Subscriptions'),m:L('মিটার','Meters')};
+const bkLbl=bk=>TABN[NAVS.length?NAVS[NAVS.length-1]:bk]||TABN[bk]||L('পেছনে','Back');
+function goBack(bk){go(NAVS.length?NAVS.pop():(bk||'r'),1)}
+function backNav(){if($('lk')||($('pinl')&&$('pinl').open))return 'lock';
+  const ds=[...document.querySelectorAll('dialog[open]')].filter(d=>d.id!=='pinl');if(ds.length){ds[ds.length-1].close();return true}
+  if(NAVS.length){go(NAVS.pop(),1);return true}
+  if(TAB!=='h'){go('h',1);return true}return false}
+function backKey(){const r=backNav(),A=CPl().App;if(r===true)return;if(r==='lock'){if(A&&A.minimizeApp)A.minimizeApp();return}
+  if(Date.now()-EXIT_T<2200){if(A&&A.exitApp)A.exitApp();return}EXIT_T=Date.now();ts(L('বের হতে আবার ব্যাক চাপুন','Press back again to exit'))}
+{const A=CPl().App;if(A&&A.addListener)A.addListener('backButton',backKey);
+ else{history.replaceState({r:1},'');history.pushState({a:1},'');window.addEventListener('popstate',()=>{const r=backNav();if(r===true||r==='lock'){history.pushState({a:1},'');return}
+   if(Date.now()-EXIT_T<2200)return;EXIT_T=Date.now();ts(L('বের হতে আবার ব্যাক চাপুন','Press back again to exit'));setTimeout(()=>{if(history.state&&history.state.r)history.pushState({a:1},'')},2200)})}}
+
+/* --- 4. alerts, reminders & tips now live in More; home keeps only a badge on the More tab --- */
+function alDraw(){const A=alerts();$('al-hd').innerHTML=hd(L('সতর্কতা, রিমাইন্ডার ও পরামর্শ','Alerts, reminders & tips'),L('বিল, মেয়াদ, ফলো-আপ ও খরচের পরামর্শ এক জায়গায়','Bills, expiries, follow-ups & spending tips in one place'),'r');
+  $('al-b').innerHTML=`<div class="cd"><h2>🔔 ${L('সতর্কতা ও রিমাইন্ডার','Alerts & reminders')} <small>${N(A.length)}</small></h2>${A.map(alRow).join('')||`<small>${L('এখন কোনো সতর্কতা নেই ✓','No alerts right now ✓')}</small>`}<button class="b o s" style="margin-top:8px" onclick="goSec('st','st-nf')">⚙️ ${L('নোটিফিকেশন সেটিংস','Notification settings')}</button></div><div class="cd"><h2>💡 ${L('পরামর্শ','Tips')}</h2>${tp(tips(M))}</div>`}
+function alBadge(){const b=document.querySelector('nav [data-t=r]');if(!b)return;const n=alerts().length;if(n)b.setAttribute('data-n',n>9?'9+':n);else b.removeAttribute('data-n')}
+{const _rn=render;render=function(){_rn();alBadge()}}
+function lifeTog(){sset('hubLife',sget('hubLife',0)?0:1);hubDraw()}
+
+/* --- 4b. home: today's top-3 priority tasks right after the wallets --- */
+function t3H(){const e=$('t3h');if(!e)return;const t3=D.td.filter(x=>!x.dn&&x.top).slice(0,3),ar=a=>(AREAS.find(z=>z[0]===a)||['',''])[1];
+  e.innerHTML=`<div class="r"><h2 style="margin:0">⭐ ${L('আজকের সেরা ৩ কাজ','Today\u2019s top 3')} <small>${N(t3.length)}/3</small></h2><button class="b o s" onclick="goSec('td','sec-plan')">${L('সব কাজ','All tasks')}</button></div>`+(t3.length?t3.map(x=>`<div class="li" style="cursor:default"><button class="ck" onclick="tdTog('${x.id}')"> </button><div style="flex:1"><b>${E(x.n)}</b><br><small>${ar(x.ar)}${x.d&&x.d!==today?' · '+x.d:''}</small></div></div>`).join(''):`<small>${L('এখনো সেরা ৩ কাজ বাছা হয়নি — প্ল্যানারে কাজের পাশে ☆ চাপুন','No top-3 picked yet — tap ☆ next to a task in the planner')}</small>`)}
+{const _rh3=rH;rH=function(){_rh3();t3H()}}
+
+/* --- 5. toddler growth: edit / delete a typo --- */
+function kgEdit(i){const g=D.kid.gr[i];if(!g)return;sheet(`<h2>✎ ${L('মাপ সম্পাদনা','Edit measurement')}</h2><small>${L('তারিখ','Date')}</small><input id="kgd" type="date" value="${g.d}" max="${today}"><small>${L('উচ্চতা (cm)','Height (cm)')}</small><input id="kgh2" type="number" step="0.1" value="${g.h||''}"><small>${L('ওজন (kg)','Weight (kg)')}</small><input id="kgw2" type="number" step="0.1" value="${g.w||''}"><div style="display:flex;gap:8px;margin-top:12px"><button class="b" style="flex:1" onclick="kgUpd(${i})">${L('সেভ','Save')}</button><button class="b o" onclick="kgDel(${i})">🗑 ${L('মুছুন','Delete')}</button><button class="b o" onclick="sheetX()">${L('বাতিল','Cancel')}</button></div>`)}
+function kgUpd(i){const g=D.kid.gr[i];if(!g)return;const h=+$('kgh2').value||0,w=+$('kgw2').value||0;if(!h&&!w)return ts(L('উচ্চতা বা ওজন দিন','Enter height or weight'));g.d=$('kgd').value||g.d;g.h=h;g.w=w;sv_();sheetX();fmDraw();ts(L('মাপ ঠিক করা হয়েছে ✓','Measurement updated ✓'))}
+function kgDel(i){if(!D.kid.gr[i]||!confirm(L('এই মাপটি মুছবেন?','Delete this measurement?')))return;D.kid.gr.splice(i,1);sv_();sheetX();fmDraw()}
+
+/* --- 9. transactions: Credit / Debit totals for what is listed --- */
+function tSum(){const e=$('tsum');if(!e)return;const r=calc(M),cp=cm(),q=($('sq').value||'').trim().toLowerCase(),f=$('sf').value;
+  let cr=0,db=0,sv=0,n=0;r.T.filter(x=>(!f||x.c===f)&&(!q||((x.n||'')+((cp[x.c]||{}).n||'')).toLowerCase().includes(q))).forEach(x=>{const a=+x.a||0;n++;if(x.k==='i')cr+=a;else if(x.k==='e')db+=a;else if(x.k==='s')sv+=a});
+  e.innerHTML=`<div class="tcd"><div class="tcc"><small>⬆ ${L('ক্রেডিট (আয়ের এন্ট্রি)','Credit (income entries)')}</small><b>${B(cr)}</b></div><div class="tcc tdb"><small>⬇ ${L('ডেবিট (খরচ)','Debit (expenses)')}</small><b>${B(db)}</b></div></div>${sv?`<small>🎯 ${L('সঞ্চয় (আলাদা)','Savings (separate)')}: ${B(sv)}</small>`:''}`}
+{const _rT=rT;rT=function(){_rT();tSum()}}
+
+/* --- 3. wallet brand badges (drop official logo files into www/logos/ to replace the letter badge) --- */
+const WBR={bkash:{c:'#E2136E',t:'b',re:/bkash|বিকাশ/i},nagad:{c:'#F6921E',t:'N',re:/nagad|নগদ \(/i},rocket:{c:'#8C3494',t:'R',re:/rocket|রকেট/i},upay:{c:'#FFC20E',t:'U',re:/upay|উপায়/i}};
+function wlBrand(w){const n=(w&&w.n)||'';for(const k in WBR)if(WBR[k].re.test(n))return k;return ''}
+function wlIc(w){const k=wlBrand(w);if(!k)return (w&&w.e)||'💳';const b=WBR[k];
+  return `<span class="wlg" style="background:${b.c}"><b>${b.t}</b><img src="logos/${k}.png" alt="" onerror="if(!this.dataset.s){this.dataset.s=1;this.src='logos/${k}.svg'}else this.remove()"></span>`}
+
+
 /* RM was built before these screens were wrapped, so refresh every wrapped entry */
-Object.assign(RM,{h:rH,r:hubDraw,k:calDraw,wl:wlDraw,td:tdDraw,kt:ktDraw,hm:hmDraw,fm:fmDraw});
+Object.assign(RM,{h:rH,r:hubDraw,k:calDraw,al:alDraw,wl:wlDraw,td:tdDraw,kt:ktDraw,hm:hmDraw,fm:fmDraw});
 
 
 /* custom duotone icons */
