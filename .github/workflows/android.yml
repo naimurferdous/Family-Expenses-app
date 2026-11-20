@@ -21,7 +21,27 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+      - name: Static source tests
+        run: |
+          node --check scripts/collect-dam-prices.mjs
+          node tests/dam-parser.test.mjs
+          node tests/prayer-reference.test.mjs
+          node tests/reminder-parser.test.mjs
+          python3 - <<'PY'
+          import re
+          s=open('www/index.html', encoding='utf8').read()
+          scripts=re.findall(r'<script>(.*?)</script>', s, re.S)
+          open('/tmp/family-app-inline.js','w',encoding='utf8').write('\n'.join(scripts))
+          PY
+          node --check /tmp/family-app-inline.js
       - run: npm install
+      - name: Dependency vulnerability audit
+        run: npm audit --audit-level=high
+      - name: Repository security checks
+        run: |
+          node tests/security-policy.test.mjs
+          test ! -f debug.keystore
+          test ! -f signing-secrets.txt
       - run: cp node_modules/chart.js/dist/chart.umd.js www/chart.umd.js
       - run: npx cap add android
       - name: Generate app icons from www/logo.png
@@ -60,7 +80,7 @@ jobs:
             SIGNED=true
           else
             echo "::warning title=Debug signing::No KEYSTORE_BASE64 secret found - building a DEBUG-signed APK, which Play Protect distrusts. See SIGNING-SETUP.txt."
-            mkdir -p ~/.android && cp debug.keystore ~/.android/debug.keystore
+            # Gradle creates a temporary debug signing key locally; never use a repo-stored key.
             echo "SIGNED=debug" >> "$GITHUB_ENV"
             SIGNED=false
           fi
@@ -75,7 +95,7 @@ jobs:
           m = "android/app/src/main/AndroidManifest.xml"
           s = open(m, encoding="utf8").read()
           s = s.replace('android:allowBackup="true"', 'android:allowBackup="false"')
-          perms = ["INTERNET", "USE_BIOMETRIC", "POST_NOTIFICATIONS"] + (["REQUEST_INSTALL_PACKAGES"] if inapp else [])
+          perms = ["INTERNET", "USE_BIOMETRIC", "POST_NOTIFICATIONS", "ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"] + (["REQUEST_INSTALL_PACKAGES"] if inapp else [])
           for p in perms:
               if "permission." + p not in s:
                   s = s.replace("<application", '<uses-permission android:name="android.permission.' + p + '" />\n    <application', 1)
