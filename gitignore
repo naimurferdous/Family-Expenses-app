@@ -1,0 +1,21 @@
+*.jks
+*.p12
+signing-secrets*
+# Sensitive local exports and signing material
+*.apk
+*.aab
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+FamilyBudget/
+Backup/
+Export/
+Vault-Export/
+*.csv
+*.xlsx
+*.pdf
+.env
+.env.*
