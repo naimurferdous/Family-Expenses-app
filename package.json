@@ -10,7 +10,7 @@
     "@capacitor/local-notifications": "^6.0.0",
     "@capacitor/share": "^6.0.0",
     "@capgo/capacitor-native-biometric": "^6.0.0",
-    "@capacitor/app": "^6.0.0"
+    "@capacitor/app": "^8.1.2"
   },
   "overrides": {
     "glob": "14.0.2",
