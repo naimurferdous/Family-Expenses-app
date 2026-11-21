@@ -1,3 +1,15 @@
+# Family Expenses v2.6.0
+
+- **News** now loads through the phone's native HTTP (no browser CORS limit) with fallback sources (The Daily Star, Dhaka Tribune, Google News BD, BBC Bangla / BBC World, Al Jazeera). The thin bar sits right under the routine card; Bangladesh and International tabs, once-a-day auto update and a Refresh button.
+- **Calculator**: Standard / Advanced switch is back - scientific, converters (length, weight, temperature/weather units, area incl. katha & bigha, gold vori, data, speed), age & dates, 2x2 / 3x3 matrices, percentage, discount/VAT, EMI, BMI, bill split.
+- **Themes**: 8 more themes and a real custom colour picker (backgrounds, cards and text are generated from one colour, light and dark).
+- **Prayer & Qibla** redesigned. The Qibla bearing formula had the Kaaba's latitude/longitude swapped (about 30 degrees off in Dhaka) - fixed and covered by a test. The compass now uses the absolute heading sensor with tilt compensation and smoothing, shows a rotating dial with the Kaaba marker, distance, turn-left/right hint and a green lock + vibration when aligned.
+- **Prayer times** are editable: tap a time to enter your local mosque time (stored as a minute adjustment), or use - / +. Method (Karachi, MWL, ISNA, Egypt, custom angles), Hanafi/Standard Asr, 12h/24h, district presets, GPS, Sehri margin.
+- **More**: "Daily life" and "Daily life & family hub" are merged into one block with a Today / Faith / Family / Home picker (all features kept). Private assets now sits near the bottom, above the App group. "About the app" is a normal row with a trailing arrow like the others. The More tab in the bottom bar has the same colours as Home/Plan.
+- Back buttons in Calculator, Notes and Sheets use the same big pill as every other screen.
+
+**Validation:** syntax, jsdom/browser smoke tests of all screens and the unit tests were run locally. A GitHub Actions APK build and a test on a real phone (compass sensor, live news) are still required.
+
 # Family Expenses v2.5.6
 
 - Fixed: the **Today dashboard** crashed when opened (undefined bazaar list). It now shows today's bazaar items.
