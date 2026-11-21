@@ -9,7 +9,7 @@
     "chart.js": "4.4.1",
     "@capacitor/local-notifications": "^6.0.0",
     "@capacitor/share": "^6.0.0",
-    "@capgo/capacitor-native-biometric": "^6.0.0",
+    "@capgo/capacitor-native-biometric": "^8.9.3",
     "@capacitor/app": "^6.0.0"
   },
   "overrides": {
