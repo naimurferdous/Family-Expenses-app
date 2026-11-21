@@ -1,32 +1,142 @@
 {
   "source": "Bangladesh Department of Agricultural Marketing (DAM) public summary",
   "source_url": "https://market.dam.gov.bd/?L=E",
-  "report_date": "20 November 2026",
-  "fetched_at": "2026-11-20T21:12:00+06:00",
-  "parser": "Initial web-verified snapshot; scheduled collector will replace this with parsed data",
-  "unit_note": "DAM public summary does not expose units in the extracted snapshot; confirm units from the report before comparing item quantities.",
+  "report_date": null,
+  "fetched_at": "2026-11-21T09:09:50.923Z",
+  "parser": "DAM summary range parser v1",
+  "unit_note": "Commodity units were not captured by this parser; check the official report before comparing quantity-based prices.",
   "items": [
-    {"name":"Aman-Fine","min":72,"max":75,"unit":""},
-    {"name":"Aman-Medium","min":56,"max":60,"unit":""},
-    {"name":"Aman-Coarse","min":48,"max":50,"unit":""},
-    {"name":"Boro-Fine","min":66,"max":70,"unit":""},
-    {"name":"Boro-Medium","min":55,"max":57,"unit":""},
-    {"name":"Boro-Coarse","min":47,"max":49,"unit":""},
-    {"name":"Ata (packet)","min":58,"max":61,"unit":""},
-    {"name":"Farm-raised Hen","min":162,"max":167,"unit":""},
-    {"name":"Beef","min":729,"max":750,"unit":""},
-    {"name":"Egg Farm-Red","min":47,"max":48,"unit":""},
-    {"name":"Sugar (Local)","min":132,"max":135,"unit":""},
-    {"name":"Iodized Salt (Packed)","min":32,"max":40,"unit":""},
-    {"name":"Mung","min":122,"max":128,"unit":""},
-    {"name":"Gram-Whole","min":85,"max":90,"unit":""},
-    {"name":"Soybean","min":163,"max":165,"unit":""},
-    {"name":"Onion-local","min":60,"max":64,"unit":""},
-    {"name":"Garlic-local","min":173,"max":186,"unit":""},
-    {"name":"Garlic-Imported","min":192,"max":204,"unit":""},
-    {"name":"Green Chili","min":218,"max":237,"unit":""},
-    {"name":"Ginger-local","min":154,"max":174,"unit":""},
-    {"name":"Ginger-Imported","min":167,"max":186,"unit":""},
-    {"name":"Mutton","min":900,"max":1100,"unit":""}
+    {
+      "name": "Aman-Fine",
+      "min": 72,
+      "max": 75,
+      "unit": ""
+    },
+    {
+      "name": "Aman-Medium",
+      "min": 56,
+      "max": 60,
+      "unit": ""
+    },
+    {
+      "name": "Aman-Coarse",
+      "min": 48,
+      "max": 50,
+      "unit": ""
+    },
+    {
+      "name": "Boro-Fine",
+      "min": 66,
+      "max": 70,
+      "unit": ""
+    },
+    {
+      "name": "Boro-Medium",
+      "min": 55,
+      "max": 57,
+      "unit": ""
+    },
+    {
+      "name": "Boro-Coarse",
+      "min": 47,
+      "max": 49,
+      "unit": ""
+    },
+    {
+      "name": "Ata (packet)",
+      "min": 58,
+      "max": 61,
+      "unit": ""
+    },
+    {
+      "name": "Farm-raised Hen",
+      "min": 162,
+      "max": 167,
+      "unit": ""
+    },
+    {
+      "name": "Beef",
+      "min": 729,
+      "max": 750,
+      "unit": ""
+    },
+    {
+      "name": "Egg Farm-Red",
+      "min": 47,
+      "max": 48,
+      "unit": ""
+    },
+    {
+      "name": "Sugar (Local)",
+      "min": 132,
+      "max": 135,
+      "unit": ""
+    },
+    {
+      "name": "Iodized Salt (Packed)",
+      "min": 32,
+      "max": 40,
+      "unit": ""
+    },
+    {
+      "name": "Mung",
+      "min": 122,
+      "max": 128,
+      "unit": ""
+    },
+    {
+      "name": "Gram-Whole",
+      "min": 85,
+      "max": 90,
+      "unit": ""
+    },
+    {
+      "name": "Soybean",
+      "min": 163,
+      "max": 165,
+      "unit": ""
+    },
+    {
+      "name": "Onion-local",
+      "min": 60,
+      "max": 64,
+      "unit": ""
+    },
+    {
+      "name": "Garlic-local",
+      "min": 173,
+      "max": 186,
+      "unit": ""
+    },
+    {
+      "name": "Garlic-Imported",
+      "min": 192,
+      "max": 204,
+      "unit": ""
+    },
+    {
+      "name": "Green Chili",
+      "min": 218,
+      "max": 237,
+      "unit": ""
+    },
+    {
+      "name": "Ginger-local",
+      "min": 154,
+      "max": 174,
+      "unit": ""
+    },
+    {
+      "name": "Ginger-Imported",
+      "min": 167,
+      "max": 186,
+      "unit": ""
+    },
+    {
+      "name": "Mutton",
+      "min": 900,
+      "max": 1100,
+      "unit": ""
+    }
   ]
 }
