@@ -9,3 +9,12 @@ const minute=x=>Math.floor(x);
 const reference={fajr:297,sunrise:376,noon:704,asr:936,sunset:1032,isha:1110};
 for(const [k,v] of Object.entries(reference))assert.ok(Math.abs(minute(got[k])-v)<=1,`${k}: got ${minute(got[k])}, expected ${v} ±1m`);
 console.log('Prayer calculator reference check (Karachi 18°, Hanafi Asr, Dhaka): OK within 1 minute of online reference table.');
+
+const qline=html.split('\n').find(x=>x.startsWith('function lfQibla('));
+assert.ok(qline,'lfQibla found');
+const qb=new Function(`${qline}; return lfQibla;`)();
+const near=(a,b,t)=>Math.min(Math.abs(a-b),360-Math.abs(a-b))<=t;
+assert.ok(near(qb(23.8103,90.4125),277.5,0.6),'Qibla Dhaka should be about 277.5 degrees');
+assert.ok(near(qb(51.5074,-0.1278),118.99,0.8),'Qibla London should be about 119 degrees');
+assert.ok(near(qb(40.7128,-74.006),58.5,0.8),'Qibla New York should be about 58.5 degrees');
+console.log('Qibla bearing check: OK (Dhaka, London, New York).');
